@@ -1,0 +1,20 @@
+NAME: dotnetgigs
+LAST DEPLOYED: Thu May 21 00:14:39 2026
+NAMESPACE: m2cloud
+STATUS: deployed
+REVISION: 4
+TEST SUITE: None
+NOTES:
+DotNetGigs est déployé dans le namespace m2cloud.
+
+URL publique HTTPS:
+  https://dotnetgigs.local
+
+Commandes utiles:
+  kubectl get all -n m2cloud
+  kubectl get ingress -n m2cloud
+  kubectl get hpa -n m2cloud -w
+  kubectl logs -n m2cloud deploy/webmvc
+
+Si tu es en local kind:
+  echo "127.0.0.1 dotnetgigs.local" | sudo tee -a /etc/hosts

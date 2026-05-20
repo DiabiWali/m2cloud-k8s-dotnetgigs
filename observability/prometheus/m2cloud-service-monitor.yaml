@@ -1,0 +1,19 @@
+# Exemple ServiceMonitor à activer si les applications exposent /metrics plus tard.
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: m2cloud-services
+  namespace: monitoring
+  labels:
+    release: monitoring
+spec:
+  namespaceSelector:
+    matchNames:
+      - m2cloud
+  selector:
+    matchLabels:
+      app.kubernetes.io/part-of: dotnetgigs
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 30s

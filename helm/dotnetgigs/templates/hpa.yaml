@@ -1,0 +1,71 @@
+{{- if .Values.autoscaling.webmvc.enabled }}
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: webmvc
+  namespace: {{ include "dotnetgigs.namespace" . }}
+  labels:
+    {{- include "dotnetgigs.labels" . | nindent 4 }}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: webmvc
+  minReplicas: {{ .Values.autoscaling.webmvc.minReplicas }}
+  maxReplicas: {{ .Values.autoscaling.webmvc.maxReplicas }}
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: {{ .Values.autoscaling.webmvc.targetCPUUtilizationPercentage }}
+---
+{{- end }}
+{{- if .Values.autoscaling.applicantsApi.enabled }}
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: applicants-api
+  namespace: {{ include "dotnetgigs.namespace" . }}
+  labels:
+    {{- include "dotnetgigs.labels" . | nindent 4 }}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: applicants-api
+  minReplicas: {{ .Values.autoscaling.applicantsApi.minReplicas }}
+  maxReplicas: {{ .Values.autoscaling.applicantsApi.maxReplicas }}
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: {{ .Values.autoscaling.applicantsApi.targetCPUUtilizationPercentage }}
+---
+{{- end }}
+{{- if .Values.autoscaling.jobsApi.enabled }}
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: jobs-api
+  namespace: {{ include "dotnetgigs.namespace" . }}
+  labels:
+    {{- include "dotnetgigs.labels" . | nindent 4 }}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: jobs-api
+  minReplicas: {{ .Values.autoscaling.jobsApi.minReplicas }}
+  maxReplicas: {{ .Values.autoscaling.jobsApi.maxReplicas }}
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: {{ .Values.autoscaling.jobsApi.targetCPUUtilizationPercentage }}
+{{- end }}

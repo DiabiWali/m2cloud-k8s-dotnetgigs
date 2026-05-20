@@ -1,0 +1,83 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webmvc
+  namespace: {{ include "dotnetgigs.namespace" . }}
+  labels:
+    {{- include "dotnetgigs.labels" . | nindent 4 }}
+    app.kubernetes.io/name: webmvc
+    app.kubernetes.io/component: frontend
+spec:
+  replicas: {{ .Values.replicaCount.webmvc }}
+  revisionHistoryLimit: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: webmvc
+  template:
+    metadata:
+      labels:
+        {{- include "dotnetgigs.labels" . | nindent 8 }}
+        app.kubernetes.io/name: webmvc
+        app.kubernetes.io/component: frontend
+    spec:
+      automountServiceAccountToken: false
+      affinity:
+        podAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 80
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app.kubernetes.io/name
+                      operator: In
+                      values: ["applicants-api", "jobs-api"]
+                topologyKey: kubernetes.io/hostname
+      containers:
+        - name: webmvc
+          image: {{ include "dotnetgigs.image" (list . .Values.images.webmvc) }}
+          env:
+            - name: ApiSettings__JobsApiUrl
+              value: "http://jobs-api"
+            - name: ApiSettings__IdentityApiUrl
+              value: "http://identity-api"
+          imagePullPolicy: {{ .Values.global.imagePullPolicy }}
+          ports:
+            - name: http
+              containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: dotnetgigs-config
+          readinessProbe:
+            tcpSocket:
+              port: http
+            initialDelaySeconds: 20
+            periodSeconds: 10
+          livenessProbe:
+            tcpSocket:
+              port: http
+            initialDelaySeconds: 40
+            periodSeconds: 20
+          resources:
+            {{- toYaml .Values.resources.webmvc | nindent 12 }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webmvc
+  namespace: {{ include "dotnetgigs.namespace" . }}
+  labels:
+    {{- include "dotnetgigs.labels" . | nindent 4 }}
+    app.kubernetes.io/name: webmvc
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: webmvc
+  ports:
+    - name: http
+      port: {{ .Values.service.webmvc.port }}
+      targetPort: {{ .Values.service.webmvc.targetPort }}

@@ -1,0 +1,13 @@
+DotNetGigs est déployé dans le namespace {{ include "dotnetgigs.namespace" . }}.
+
+URL publique HTTPS:
+  https://{{ .Values.ingress.host }}
+
+Commandes utiles:
+  kubectl get all -n {{ include "dotnetgigs.namespace" . }}
+  kubectl get ingress -n {{ include "dotnetgigs.namespace" . }}
+  kubectl get hpa -n {{ include "dotnetgigs.namespace" . }} -w
+  kubectl logs -n {{ include "dotnetgigs.namespace" . }} deploy/webmvc
+
+Si tu es en local kind:
+  echo "127.0.0.1 {{ .Values.ingress.host }}" | sudo tee -a /etc/hosts

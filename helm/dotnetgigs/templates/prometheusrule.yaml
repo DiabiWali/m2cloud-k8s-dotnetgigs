@@ -1,0 +1,30 @@
+{{- if .Values.monitoring.prometheusRule.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: dotnetgigs-slo-rules
+  namespace: {{ .Values.monitoring.serviceMonitor.namespace }}
+  labels:
+    release: kube-prometheus-stack
+    {{- include "dotnetgigs.labels" . | nindent 4 }}
+spec:
+  groups:
+    - name: dotnetgigs.availability
+      rules:
+        - alert: DotNetGigsPodRestartingFrequently
+          expr: increase(kube_pod_container_status_restarts_total{namespace="{{ include "dotnetgigs.namespace" . }}"}[10m]) > 3
+          for: 2m
+          labels:
+            severity: warning
+          annotations:
+            summary: "Pod DotNetGigs instable"
+            description: "Un conteneur redémarre trop souvent dans le namespace {{ include "dotnetgigs.namespace" . }}."
+        - alert: DotNetGigsDeploymentUnavailable
+          expr: kube_deployment_status_replicas_available{namespace="{{ include "dotnetgigs.namespace" . }}"} == 0
+          for: 3m
+          labels:
+            severity: critical
+          annotations:
+            summary: "Service DotNetGigs indisponible"
+            description: "Un deployment n'a aucun replica disponible."
+{{- end }}

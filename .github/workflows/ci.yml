@@ -1,0 +1,36 @@
+name: ci
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/setup-helm@v4
+        with:
+          version: v3.16.4
+      - name: Install kubeconform
+        run: |
+          curl -L -o kubeconform.tar.gz https://github.com/yannh/kubeconform/releases/download/v0.6.7/kubeconform-linux-amd64.tar.gz
+          tar xzf kubeconform.tar.gz
+          sudo mv kubeconform /usr/local/bin/
+      - name: Helm lint
+        run: helm lint helm/dotnetgigs -f environments/dev/values-dev.yaml
+      - name: Helm template
+        run: |
+          mkdir -p _rendered
+          helm template dotnetgigs helm/dotnetgigs -n m2cloud -f helm/dotnetgigs/values.yaml -f environments/dev/values-dev.yaml > _rendered/dotnetgigs.yaml
+      - name: Kubernetes schema validation
+        run: kubeconform -strict -summary -ignore-missing-schemas _rendered/dotnetgigs.yaml
+      - name: Trivy IaC scan
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          scan-type: config
+          scan-ref: .
+          severity: HIGH,CRITICAL
+          exit-code: '0'

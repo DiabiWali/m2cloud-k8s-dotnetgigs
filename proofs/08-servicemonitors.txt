@@ -1,0 +1,15 @@
+NAMESPACE       NAME                                             AGE
+observability   dotnetgigs-services                              79m
+observability   kube-prometheus-stack-alertmanager               133m
+observability   kube-prometheus-stack-apiserver                  133m
+observability   kube-prometheus-stack-coredns                    133m
+observability   kube-prometheus-stack-grafana                    133m
+observability   kube-prometheus-stack-kube-controller-manager    133m
+observability   kube-prometheus-stack-kube-etcd                  133m
+observability   kube-prometheus-stack-kube-proxy                 133m
+observability   kube-prometheus-stack-kube-scheduler             133m
+observability   kube-prometheus-stack-kube-state-metrics         133m
+observability   kube-prometheus-stack-kubelet                    133m
+observability   kube-prometheus-stack-operator                   133m
+observability   kube-prometheus-stack-prometheus                 133m
+observability   kube-prometheus-stack-prometheus-node-exporter   133m

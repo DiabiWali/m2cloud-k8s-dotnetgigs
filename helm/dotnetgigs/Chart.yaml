@@ -1,0 +1,18 @@
+apiVersion: v2
+name: dotnetgigs
+description: Production-like Kubernetes packaging for the M2Cloud microservices project
+type: application
+version: 1.1.0
+appVersion: "1.0.0"
+keywords:
+  - kubernetes
+  - helm
+  - m2cloud
+  - microservices
+  - observability
+  - security
+maintainers:
+  - name: Wali
+    email: wali@example.local
+annotations:
+  artifacthub.io/category: integration-delivery

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="850" viewBox="0 0 1400 850">
+  <rect width="1400" height="850" fill="#f8fafc"/>
+  <text x="60" y="70" font-family="Arial" font-size="34" font-weight="700" fill="#0f172a">M2Cloud Kubernetes Architecture</text>
+  <text x="60" y="105" font-family="Arial" font-size="17" fill="#475569">Ingress HTTPS · Microservices internes · NetworkPolicy · HPA · Prometheus/Grafana · EFK</text>
+
+  <rect x="45" y="140" width="1310" height="610" rx="24" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="80" y="180" font-family="Arial" font-size="20" font-weight="700" fill="#1e293b">Cluster Kubernetes namespace: m2cloud</text>
+
+  <rect x="80" y="220" width="220" height="90" rx="14" fill="#e0f2fe" stroke="#0284c7"/>
+  <text x="116" y="258" font-family="Arial" font-size="18" font-weight="700" fill="#075985">Ingress NGINX</text>
+  <text x="126" y="285" font-family="Arial" font-size="14" fill="#075985">TLS 443 / HTTPS</text>
+
+  <rect x="365" y="220" width="210" height="90" rx="14" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="432" y="258" font-family="Arial" font-size="18" font-weight="700" fill="#166534">webmvc</text>
+  <text x="412" y="285" font-family="Arial" font-size="14" fill="#166534">HPA + probes</text>
+
+  <rect x="675" y="170" width="220" height="80" rx="14" fill="#fef9c3" stroke="#ca8a04"/>
+  <text x="720" y="204" font-family="Arial" font-size="17" font-weight="700" fill="#854d0e">applicants-api</text>
+  <text x="728" y="228" font-family="Arial" font-size="13" fill="#854d0e">ClusterIP interne</text>
+
+  <rect x="675" y="280" width="220" height="80" rx="14" fill="#fef9c3" stroke="#ca8a04"/>
+  <text x="747" y="314" font-family="Arial" font-size="17" font-weight="700" fill="#854d0e">jobs-api</text>
+  <text x="728" y="338" font-family="Arial" font-size="13" fill="#854d0e">ClusterIP interne</text>
+
+  <rect x="675" y="390" width="220" height="80" rx="14" fill="#fef9c3" stroke="#ca8a04"/>
+  <text x="735" y="424" font-family="Arial" font-size="17" font-weight="700" fill="#854d0e">identity-api</text>
+  <text x="728" y="448" font-family="Arial" font-size="13" fill="#854d0e">ClusterIP interne</text>
+
+  <rect x="1010" y="210" width="210" height="90" rx="14" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="1080" y="248" font-family="Arial" font-size="18" font-weight="700" fill="#991b1b">sql-data</text>
+  <text x="1060" y="275" font-family="Arial" font-size="14" fill="#991b1b">PersistentVolume</text>
+
+  <rect x="1010" y="330" width="210" height="90" rx="14" fill="#fae8ff" stroke="#c026d3"/>
+  <text x="1070" y="368" font-family="Arial" font-size="18" font-weight="700" fill="#86198f">rabbitmq</text>
+  <text x="1055" y="395" font-family="Arial" font-size="14" fill="#86198f">messaging interne</text>
+
+  <rect x="1010" y="450" width="210" height="90" rx="14" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="1070" y="488" font-family="Arial" font-size="18" font-weight="700" fill="#5b21b6">user-data</text>
+  <text x="1082" y="515" font-family="Arial" font-size="14" fill="#5b21b6">Redis</text>
+
+  <rect x="80" y="610" width="520" height="100" rx="18" fill="#f1f5f9" stroke="#64748b"/>
+  <text x="115" y="648" font-family="Arial" font-size="18" font-weight="700" fill="#334155">Observabilité métriques</text>
+  <text x="115" y="676" font-family="Arial" font-size="14" fill="#475569">kube-prometheus-stack · kube-state-metrics · Grafana dashboards · alerting rules</text>
+
+  <rect x="690" y="610" width="530" height="100" rx="18" fill="#f1f5f9" stroke="#64748b"/>
+  <text x="725" y="648" font-family="Arial" font-size="18" font-weight="700" fill="#334155">Logs centralisés</text>
+  <text x="725" y="676" font-family="Arial" font-size="14" fill="#475569">Fluent Bit collecte stdout/stderr · Elasticsearch · Kibana recherche ERROR/HTTP 5xx</text>
+
+  <line x1="300" y1="265" x2="365" y2="265" stroke="#0284c7" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="575" y1="250" x2="675" y2="210" stroke="#16a34a" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="575" y1="265" x2="675" y2="320" stroke="#16a34a" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="575" y1="285" x2="675" y2="430" stroke="#16a34a" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="895" y1="210" x2="1010" y2="255" stroke="#ca8a04" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="895" y1="320" x2="1010" y2="255" stroke="#ca8a04" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="895" y1="225" x2="1010" y2="375" stroke="#c026d3" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="895" y1="335" x2="1010" y2="375" stroke="#c026d3" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="895" y1="430" x2="1010" y2="495" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+  </defs>
+</svg>

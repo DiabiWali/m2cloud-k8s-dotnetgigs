@@ -1,0 +1,39 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: m2cloud-require-resources-and-probes
+spec:
+  validationFailureAction: Audit
+  background: true
+  rules:
+    - name: require-requests-limits
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      validate:
+        message: "Chaque conteneur doit définir CPU/MEM requests et limits."
+        pattern:
+          spec:
+            containers:
+              - resources:
+                  requests:
+                    memory: "?*"
+                    cpu: "?*"
+                  limits:
+                    memory: "?*"
+                    cpu: "?*"
+    - name: require-liveness-readiness
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      validate:
+        message: "Chaque conteneur applicatif doit exposer readinessProbe et livenessProbe."
+        pattern:
+          spec:
+            containers:
+              - readinessProbe: "?*"
+                livenessProbe: "?*"

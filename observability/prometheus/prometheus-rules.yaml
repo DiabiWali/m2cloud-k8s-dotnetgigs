@@ -1,0 +1,27 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: m2cloud-golden-signals
+  namespace: observability
+  labels:
+    release: kube-prometheus-stack
+spec:
+  groups:
+    - name: m2cloud.golden-signals
+      rules:
+        - alert: M2CloudPodCrashLooping
+          expr: kube_pod_container_status_waiting_reason{reason="CrashLoopBackOff",namespace="m2cloud"} > 0
+          for: 2m
+          labels:
+            severity: critical
+          annotations:
+            summary: "CrashLoopBackOff détecté"
+            description: "Un pod M2Cloud est en CrashLoopBackOff."
+        - alert: M2CloudHighCpuUsage
+          expr: sum(rate(container_cpu_usage_seconds_total{namespace="m2cloud",container!=""}[5m])) by (pod) > 0.8
+          for: 5m
+          labels:
+            severity: warning
+          annotations:
+            summary: "CPU élevé sur un pod M2Cloud"
+            description: "Un pod consomme fortement le CPU depuis plus de 5 minutes."

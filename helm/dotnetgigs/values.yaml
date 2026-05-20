@@ -1,0 +1,203 @@
+global:
+  imageRegistry: ghcr.io/example
+  imageTag: "1.0.0"
+  imagePullPolicy: IfNotPresent
+  labels:
+    project: m2cloud
+    owner: ynov
+    workload-tier: application
+  podAnnotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/path: "/metrics"
+    prometheus.io/port: "80"
+
+namespace:
+  create: true
+  name: m2cloud
+  podSecurity:
+    enforce: baseline
+    audit: restricted
+    warn: restricted
+
+replicaCount:
+  webmvc: 2
+  applicantsApi: 2
+  jobsApi: 2
+  identityApi: 2
+  rabbitmq: 1
+  userData: 1
+
+images:
+  webmvc: m2cloud-webmvc
+  applicantsApi: m2cloud-applicants-api
+  jobsApi: m2cloud-jobs-api
+  identityApi: m2cloud-identity-api
+  sqlData: m2cloud-sql-data
+  redis: redis:7.4-alpine
+  rabbitmq: rabbitmq:3.13-management-alpine
+
+service:
+  webmvc:
+    port: 80
+    targetPort: 80
+  api:
+    port: 80
+    targetPort: 80
+  sqlData:
+    port: 1433
+    targetPort: 1433
+  userData:
+    port: 6379
+    targetPort: 6379
+  rabbitmq:
+    amqpPort: 5672
+    managementPort: 15672
+
+ingress:
+  enabled: true
+  className: nginx
+  host: dotnetgigs.local
+  tlsSecretName: dotnetgigs-tls
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "60"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "60"
+
+config:
+  rabbitmqHost: rabbitmq
+  redisHost: user-data:6379
+  aspnetcoreEnvironment: Production
+  serviceUrls:
+    applicantsApi: http://applicants-api
+    jobsApi: http://jobs-api
+    identityApi: http://identity-api
+
+secrets:
+  sqlSaPassword: "Pass@word12345!"
+  rabbitmqDefaultUser: "guest"
+  rabbitmqDefaultPass: "guest"
+  applicantsConnectionString: "Server=sql-data;User=sa;Password=Pass@word12345!;Database=dotnetgigs.applicants;TrustServerCertificate=True;"
+  jobsConnectionString: "Server=sql-data;User=sa;Password=Pass@word12345!;Database=dotnetgigs.jobs;TrustServerCertificate=True;"
+
+persistence:
+  sqlData:
+    enabled: true
+    size: 5Gi
+    storageClassName: ""
+    accessModes:
+      - ReadWriteOnce
+
+resources:
+  webmvc:
+    requests:
+      cpu: 4m
+      memory: 900Mi
+      ephemeral-storage: 256Mi
+    limits:
+      cpu: "1"
+      memory: 2000Mi
+      ephemeral-storage: 1Gi
+  applicantsApi:
+    requests:
+      cpu: 500m
+      memory: 500Mi
+      ephemeral-storage: 256Mi
+    limits:
+      cpu: "1"
+      memory: 1500Mi
+      ephemeral-storage: 1Gi
+  jobsApi:
+    requests:
+      cpu: 500m
+      memory: 500Mi
+      ephemeral-storage: 256Mi
+    limits:
+      cpu: "1"
+      memory: 1500Mi
+      ephemeral-storage: 1Gi
+  identityApi:
+    requests:
+      cpu: 500m
+      memory: 500Mi
+      ephemeral-storage: 256Mi
+    limits:
+      cpu: "1"
+      memory: 1500Mi
+      ephemeral-storage: 1Gi
+  userData:
+    requests:
+      cpu: 4m
+      memory: 500Mi
+      ephemeral-storage: 128Mi
+    limits:
+      cpu: 500m
+      memory: 1Gi
+      ephemeral-storage: 512Mi
+  rabbitmq:
+    requests:
+      cpu: 250m
+      memory: 512Mi
+      ephemeral-storage: 256Mi
+    limits:
+      cpu: "1"
+      memory: 1Gi
+      ephemeral-storage: 1Gi
+  sqlData:
+    requests:
+      cpu: 500m
+      memory: 2Gi
+      ephemeral-storage: 512Mi
+    limits:
+      cpu: "2"
+      memory: 3Gi
+      ephemeral-storage: 2Gi
+
+autoscaling:
+  webmvc:
+    enabled: true
+    minReplicas: 2
+    maxReplicas: 5
+    targetCPUUtilizationPercentage: 60
+  applicantsApi:
+    enabled: true
+    minReplicas: 2
+    maxReplicas: 4
+    targetCPUUtilizationPercentage: 65
+  jobsApi:
+    enabled: true
+    minReplicas: 2
+    maxReplicas: 4
+    targetCPUUtilizationPercentage: 65
+
+probes:
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  timeoutSeconds: 5
+  failureThreshold: 6
+
+pdb:
+  enabled: true
+  minAvailable:
+    webmvc: 1
+    applicantsApi: 1
+    jobsApi: 1
+    identityApi: 1
+
+networkPolicy:
+  enabled: true
+
+rbac:
+  create: true
+
+monitoring:
+  serviceMonitor:
+    enabled: true
+    namespace: observability
+    interval: 30s
+  prometheusRule:
+    enabled: true
+
+canary:
+  enabled: false
+  imageTag: "canary"
+  replicas: 1

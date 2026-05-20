@@ -1,0 +1,5 @@
+Chiraz - Observabilité, logs centralisés, démonstration Grafana/Kibana
+Wali - Architecture Kubernetes, sécurité, Helm, soutenance technique
+Mohamed Ali - Conteneurisation, CI/CD, tests et automatisation
+
+Note: adapter les responsabilités si la répartition réelle du groupe évolue.

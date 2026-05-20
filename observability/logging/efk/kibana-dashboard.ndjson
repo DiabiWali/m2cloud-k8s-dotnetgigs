@@ -1,0 +1,2 @@
+{"type":"index-pattern","id":"m2cloud-logs","attributes":{"title":"fluent-bit-*","timeFieldName":"@timestamp"}}
+{"type":"search","id":"m2cloud-errors","attributes":{"title":"M2Cloud - erreurs applicatives","columns":["kubernetes.pod_name","log","stream"],"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"query\":{\"language\":\"kuery\",\"query\":\"kubernetes.namespace_name : m2cloud and (log : ERROR or log : Exception or log : 500)\"},\"filter\":[]}"}}}

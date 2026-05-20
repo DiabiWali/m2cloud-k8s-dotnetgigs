@@ -1,0 +1,97 @@
+{{- if .Values.persistence.sqlData.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sql-data-pvc
+  namespace: {{ include "dotnetgigs.namespace" . }}
+  labels:
+    {{- include "dotnetgigs.labels" . | nindent 4 }}
+spec:
+  accessModes: ["ReadWriteOnce"]
+  {{- if .Values.persistence.sqlData.storageClassName }}
+  storageClassName: {{ .Values.persistence.sqlData.storageClassName | quote }}
+  {{- end }}
+  resources:
+    requests:
+      storage: {{ .Values.persistence.sqlData.size }}
+---
+{{- end }}
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: sql-data
+  namespace: {{ include "dotnetgigs.namespace" . }}
+  labels:
+    {{- include "dotnetgigs.labels" . | nindent 4 }}
+    app.kubernetes.io/name: sql-data
+    app.kubernetes.io/component: database
+spec:
+  serviceName: sql-data
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: sql-data
+  template:
+    metadata:
+      labels:
+        {{- include "dotnetgigs.labels" . | nindent 8 }}
+        app.kubernetes.io/name: sql-data
+        app.kubernetes.io/component: database
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        fsGroup: 10001
+      containers:
+        - name: sql-data
+          image: {{ include "dotnetgigs.image" (list . .Values.images.sqlData) }}
+          imagePullPolicy: {{ .Values.global.imagePullPolicy }}
+          ports:
+            - name: sql
+              containerPort: 1433
+          env:
+            - name: ACCEPT_EULA
+              value: "Y"
+            - name: SA_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: dotnetgigs-secrets
+                  key: MSSQL_SA_PASSWORD
+            - name: MSSQL_PID
+              value: Developer
+          volumeMounts:
+            - name: sql-data-storage
+              mountPath: /var/opt/mssql
+          readinessProbe:
+            tcpSocket:
+              port: sql
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            failureThreshold: 12
+          livenessProbe:
+            tcpSocket:
+              port: sql
+            initialDelaySeconds: 120
+            periodSeconds: 30
+          resources:
+            {{- toYaml .Values.resources.sqlData | nindent 12 }}
+      volumes:
+        - name: sql-data-storage
+          persistentVolumeClaim:
+            claimName: sql-data-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sql-data
+  namespace: {{ include "dotnetgigs.namespace" . }}
+  labels:
+    {{- include "dotnetgigs.labels" . | nindent 4 }}
+    app.kubernetes.io/name: sql-data
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: sql-data
+  ports:
+    - name: sql
+      port: {{ .Values.service.sqlData.port }}
+      targetPort: sql

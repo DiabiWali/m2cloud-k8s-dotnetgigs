@@ -1,0 +1,18 @@
+{{- if .Values.pdb.enabled }}
+{{- $root := . }}
+{{- range $name, $minAvailable := .Values.pdb.minAvailable }}
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ $name | kebabcase }}
+  namespace: {{ include "dotnetgigs.namespace" $root }}
+  labels:
+    {{- include "dotnetgigs.labels" $root | nindent 4 }}
+spec:
+  minAvailable: {{ $minAvailable }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ $name | kebabcase }}
+---
+{{- end }}
+{{- end }}

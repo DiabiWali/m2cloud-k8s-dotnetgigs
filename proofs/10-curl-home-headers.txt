@@ -1,0 +1,5 @@
+HTTP/2 200 
+date: Wed, 20 May 2026 22:22:03 GMT
+content-type: text/html; charset=utf-8
+strict-transport-security: max-age=31536000; includeSubDomains
+

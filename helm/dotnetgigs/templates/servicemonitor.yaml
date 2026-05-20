@@ -1,0 +1,27 @@
+{{- if .Values.monitoring.serviceMonitor.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: dotnetgigs-services
+  namespace: {{ .Values.monitoring.serviceMonitor.namespace }}
+  labels:
+    release: kube-prometheus-stack
+    {{- include "dotnetgigs.labels" . | nindent 4 }}
+spec:
+  namespaceSelector:
+    matchNames:
+      - {{ include "dotnetgigs.namespace" . }}
+  selector:
+    matchExpressions:
+      - key: app.kubernetes.io/name
+        operator: In
+        values:
+          - webmvc
+          - applicants-api
+          - jobs-api
+          - identity-api
+  endpoints:
+    - port: http
+      interval: {{ .Values.monitoring.serviceMonitor.interval }}
+      path: /metrics
+{{- end }}

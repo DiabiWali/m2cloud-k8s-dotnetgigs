@@ -1,0 +1,29 @@
+flowchart LR
+  U[Utilisateur externe] -->|HTTPS 443| I[Ingress NGINX + TLS]
+  I --> W[webmvc]
+
+  W -->|HTTP interne| A[applicants-api]
+  W -->|HTTP interne| J[jobs-api]
+  W -->|HTTP interne| ID[identity-api]
+
+  A -->|SQL 1433| SQL[(sql-data / SQL Server + PVC)]
+  J -->|SQL 1433| SQL
+  A -->|AMQP 5672| MQ[rabbitmq]
+  J -->|AMQP 5672| MQ
+  ID -->|AMQP 5672| MQ
+  ID -->|Redis 6379| R[(user-data / Redis)]
+
+  subgraph Observability[Observabilité]
+    P[Prometheus + kube-state-metrics]
+    G[Grafana]
+    FB[Fluent Bit]
+    E[Elasticsearch]
+    K[Kibana]
+  end
+
+  W -. metrics/logs .-> P
+  A -. logs .-> FB
+  J -. logs .-> FB
+  ID -. logs .-> FB
+  FB --> E --> K
+  P --> G

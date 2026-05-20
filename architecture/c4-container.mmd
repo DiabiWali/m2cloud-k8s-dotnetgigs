@@ -1,0 +1,18 @@
+flowchart LR
+  U[Utilisateur] -->|HTTPS 443| ING[Ingress NGINX + TLS]
+  ING --> WEB[webmvc]
+  WEB --> APP[applicants-api]
+  WEB --> JOB[jobs-api]
+  WEB --> ID[identity-api]
+  APP --> SQL[(sql-data)]
+  JOB --> SQL
+  APP --> MQ[(rabbitmq)]
+  JOB --> MQ
+  ID --> REDIS[(user-data Redis)]
+  PROM[Prometheus] -. scrape .-> WEB
+  PROM -. scrape .-> APP
+  PROM -. scrape .-> JOB
+  PROM -. scrape .-> ID
+  FB[Fluent Bit] -. logs .-> ES[(Elasticsearch)]
+  ES --> KIB[Kibana]
+  PROM --> GRAF[Grafana]

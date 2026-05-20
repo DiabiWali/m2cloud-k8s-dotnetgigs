@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DotNetGigs - Home Page</title>
+
+    
+    
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css" />
+<meta name="x-stylesheet-fallback-test" content="" class="sr-only" /><script>!function(a,b,c,d){var e,f=document,g=f.getElementsByTagName("SCRIPT"),h=g[g.length-1].previousElementSibling,i=f.defaultView&&f.defaultView.getComputedStyle?f.defaultView.getComputedStyle(h):h.currentStyle;if(i&&i[a]!==b)for(e=0;e<c.length;e++)f.write('<link href="'+c[e]+'" '+d+"/>")}("position","absolute",["\/lib\/bootstrap\/dist\/css\/bootstrap.min.css"], "rel=\u0022stylesheet\u0022 ");</script>
+        <link rel="stylesheet" href="/css/site.min.css?v=d54Uo600LFrPD8938Lds-OCM37D_Tfrzs_TOwjuZb5M" />
+    
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">DotNetGigs</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/Home/About">About</a></li>
+                    <li><a href="/Home/Contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        
+<div class="row">
+    <div class="col-md-8">
+        <h1>New Jobs (20)</h1>
+        <hr class="no-margin" />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+            <div class="posting">
+                <div class="title-container">
+                    <h3>Senior Software Engineer</h3>
+                    <span>HyperSec | Toronto, ON | posted on 05/20/2026</span>
+                </div>
+                <p class="description">We are seeking a Senior Software Engineer to implement ease-of-use functionality for our integrated IT Risk Management Platform built on .Net, SQL and Angular JS.</p>
+                <a class="btn btn-success" href="/jobs/apply/1" role="button">Apply for this job</a>
+                <hr />
+            </div>
+            <div class="posting">
+                <div class="title-container">
+                    <h3>Developer (.Net)</h3>
+                    <span>HyperSec | Toronto, ON | posted on 05/20/2026</span>
+                </div>
+                <p class="description">Design, implement, debug web-based applications using the appropriate tools and adhering to our coding standards Review project requirements, assess and estimate the necessary time-to-completion Contribute to and lead architecture and design activities Create unit test plans and scenarios for development unit testing Interact with other development teams to carry out code reviews and to ensure a consistent approach to software development Deploy all integration artifacts to a testing and production environment Assist other developers in resolving software development issues Perform additional duties as needed</p>
+                <a class="btn btn-success" href="/jobs/apply/2" role="button">Apply for this job</a>
+                <hr />
+            </div>
+            <div class="posting">
+                <div class="title-container">
+                    <h3>C#/.NET Developer</h3>
+                    <span>Progressive Soft | Toronto, ON | posted on 05/20/2026</span>
+                </div>
+                <p class="description">Help schools and parents in a meaningful way by using your talent as a developer to create real world solutions for their needs. We are looking for a strong C# / .NET Developer to join our product development team responsible for designing then developing new products, as well as improving our current suite of desktop, web, and mobile applications. Some of the technologies we work with are ASP.NET Core / React / Redux, WPF using the MVVM pattern, SOAP / REST based services, and MS-SQL.</p>
+                <a class="btn btn-success" href="/jobs/apply/3" role="button">Apply for this job</a>
+                <hr />
+            </div>
+            <div class="posting">
+                <div class="title-container">
+                    <h3>Full-Stack Web Developer (ASP.NET Core / React.js / C#)</h3>
+                    <span>Progressive Soft | Vancouver, BC | posted on 05/20/2026</span>
+                </div>
+                <p class="description">Help schools and parents in a meaningful way by using your talent as a developer to create real world solutions for their needs. We are looking for a strong Full-Stack Web Developer to join our product development team responsible for designing then developing new products, as well as improving our current suite of application using modern web technologies such as ASP.NET Core 2.0 / Node.js / React / Redux / Bootstrap using C# and TypeScript.  Our intelligent software manages student fees, bills parents, collect payments, synchronizes and transforms data from many different sources, and includes reporting and visualization features. Contribute to project requirements, system architecture, and brainstorm product ideas. Then, build and execute on these as part of a Scrum team using a high-end computer and large screens!</p>
+                <a class="btn btn-success" href="/jobs/apply/4" role="button">Apply for this job</a>
+                <hr />
+            </div>
+            <div class="posting">
+                <div class="title-container">
+                    <h3>Snr full stack C#.NET Developer</h3>
+                    <span>CyMax | Vancouver, BC | posted on 05/20/2026</span>
+                </div>
+                <p class="description">We&#x27;re currently looking for a talented Senior Back-End .Net Developer to join our team on a permanent full time position. The ideal candidate will have the opportunity to work for one of the highest grossing E-Tailers in North America.  What you&#x27;ll do: Maintain existing CRM, and Web-based applications in VB.NET/ASP.NET. Create user-friendly and process-efficient interfaces and tools for internal staff to access data relevant to our business. Interact with staff to track down bugs, feature requests, and potential improvements to internal applications Assist in IT related activities.</p>
+                <a class="btn btn-success" href="/jobs/apply/5" role="button">Apply for this job</a>
+                <hr />
+            </div>
+            <div class="posting">
+                <div class="title-container">
+                    <h3>Software Developer/Consultant</h3>
+                    <span>DMS Group | Vancouver, BC | posted on 05/20/2026</span>
+                </div>
+                <p class="description">Collaborate in small teams to design, build, and deploy quality software solutions for our enterprise customers Help shape our long-term technical roadmap as we scale our infrastructure and build new products Solve complex problems related to development and provide accurate estimates and scope for team deliverables Work independently and be able to effectively communicate verbally and in writing with both our customers and internal teams Perform other job-related duties as assigned, we are a small and growing organization where we are all continuously improving our daily activities to be more productive Needs to be available for occasional travel (BC, Alberta, Washington) Needs to be able to multitask, we are looking for a keen individual ready to learn and adapt to a high paced customer facing position</p>
+                <a class="btn btn-success" href="/jobs/apply/6" role="button">Apply for this job</a>
+                <hr />
+            </div>
+            <div class="posting">
+                <div class="title-container">
+                    <h3>Lead Software Developer</h3>
+                    <span>ComWave | Calgary, AB | posted on 05/20/2026</span>
+                </div>
+                <p class="description">Based in Vancouver, the Lead Software Developer will be responsible for bringing creative solutions to complex software requirements as part of a small team of software developers. This individual must understand modern/agile software development lifecycle processes, and enjoy working in a challenging environment to develop web applications, as well as building state of the art software with complex requirements. The successful candidate must have a very good knowledge of C# programming and be an independent, highly-motivated, results-driven individual who has a positive attitude and a willingness to learn.</p>
+                <a class="btn btn-success" href="/jobs/apply/7" role="button">Apply for this job</a>
+                <hr />
+            </div>
+            <div class="posting">
+                <div class="title-container">
+                    <h3>Front End Web Developer</h3>
+                    <span>MarTec Investigations | Toronto, ON | posted on 05/20/2026</span>
+                </div>
+                <p class="description">MarTec Investigations is seeking a front end web developer with 5&#x2B; years of JavaScript development who is proficient in ES6/ES2015 and newer language features. Extensive experience with the React/Redux framework is required. The candidate should also have considerable experience with a Microsoft .Net full stack (ASP.NET MVC/ C# / SQL Server).  The successful candidate will work with the MarTec Data Services team developing geo-spatial visualization applications, reporting and operations management tools and interfaces for access from PC and mobile devices. This is an ideal position for a self-starter who is able to produce results with limited supervision.</p>
+                <a class="btn btn-success" href="/jobs/apply/8" role="button">Apply for this job</a>
+                <hr />
+            </div>
+            <div class="posting">
+                <div class="title-container">

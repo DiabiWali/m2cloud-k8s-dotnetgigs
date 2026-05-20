@@ -1,0 +1,18 @@
+global:
+  imagePullPolicy: IfNotPresent
+namespace:
+  name: m2cloud
+replicaCount:
+  webmvc: 2
+  applicantsApi: 2
+  jobsApi: 2
+  identityApi: 2
+ingress:
+  host: dotnetgigs.local
+persistence:
+  sqlData:
+    size: 5Gi
+autoscaling:
+  webmvc:
+    minReplicas: 2
+    maxReplicas: 5

@@ -1,0 +1,2 @@
+NAME     CLASS   HOSTS              ADDRESS     PORTS     AGE
+webmvc   nginx   dotnetgigs.local   localhost   80, 443   79m

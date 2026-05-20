@@ -1,0 +1,24 @@
+global:
+  imagePullPolicy: Always
+namespace:
+  name: m2cloud-prod
+replicaCount:
+  webmvc: 3
+  applicantsApi: 3
+  jobsApi: 3
+  identityApi: 3
+ingress:
+  host: dotnetgigs.example.com
+persistence:
+  sqlData:
+    size: 20Gi
+autoscaling:
+  webmvc:
+    minReplicas: 3
+    maxReplicas: 10
+  applicantsApi:
+    minReplicas: 3
+    maxReplicas: 8
+  jobsApi:
+    minReplicas: 3
+    maxReplicas: 8

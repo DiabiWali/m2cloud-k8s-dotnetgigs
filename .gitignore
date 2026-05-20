@@ -1,0 +1,35 @@
+# Local environment
+.env
+*.local
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/
+
+# Temporary files
+tmp/
+*.tmp
+*.bak
+*.log
+
+# Helm backups
+helm/*.bak-*
+helm/dotnetgigs.bak-*
+
+# Build output
+bin/
+obj/
+dist/
+build/
+
+# Kubernetes generated files
+kubeconfig
+*.kubeconfig
+
+# Optional upstream app source pulled by make bootstrap
+# Keep ignored if the repo is an overlay that fetches upstream automatically.
+appscore/
+
+# Local certificates generated for kind demo
+.certs/

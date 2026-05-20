@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dotnetgigs-config
+  namespace: {{ include "dotnetgigs.namespace" . }}
+  labels:
+    {{- include "dotnetgigs.labels" . | nindent 4 }}
+data:
+  ASPNETCORE_ENVIRONMENT: {{ .Values.config.aspnetcoreEnvironment | quote }}
+  HostRabbitmq: {{ .Values.config.rabbitmqHost | quote }}
+  RedisHost: {{ .Values.config.redisHost | quote }}

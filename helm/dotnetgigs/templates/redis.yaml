@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-data
+  namespace: {{ include "dotnetgigs.namespace" . }}
+  labels:
+    {{- include "dotnetgigs.labels" . | nindent 4 }}
+    app.kubernetes.io/name: user-data
+    app.kubernetes.io/component: cache
+spec:
+  replicas: {{ .Values.replicaCount.userData }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: user-data
+  template:
+    metadata:
+      labels:
+        {{- include "dotnetgigs.labels" . | nindent 8 }}
+        app.kubernetes.io/name: user-data
+        app.kubernetes.io/component: cache
+    spec:
+      automountServiceAccountToken: false
+      containers:
+        - name: redis
+          image: {{ .Values.images.redis }}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: redis
+              containerPort: 6379
+          readinessProbe:
+            exec:
+              command: ["redis-cli", "ping"]
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          livenessProbe:
+            exec:
+              command: ["redis-cli", "ping"]
+            initialDelaySeconds: 20
+            periodSeconds: 20
+          resources:
+            {{- toYaml .Values.resources.userData | nindent 12 }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-data
+  namespace: {{ include "dotnetgigs.namespace" . }}
+  labels:
+    {{- include "dotnetgigs.labels" . | nindent 4 }}
+    app.kubernetes.io/name: user-data
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: user-data
+  ports:
+    - name: redis
+      port: {{ .Values.service.userData.port }}
+      targetPort: redis

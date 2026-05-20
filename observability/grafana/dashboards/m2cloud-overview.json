@@ -1,0 +1,73 @@
+{
+  "title": "M2Cloud - DotNetGigs Overview",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "30s",
+  "tags": [
+    "m2cloud",
+    "kubernetes",
+    "dotnetgigs"
+  ],
+  "panels": [
+    {
+      "type": "stat",
+      "title": "Pods Running",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      "targets": [
+        {
+          "expr": "count(kube_pod_status_phase{namespace=\"m2cloud\",phase=\"Running\"})"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Deployments Available",
+      "gridPos": {
+        "x": 6,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      "targets": [
+        {
+          "expr": "sum(kube_deployment_status_replicas_available{namespace=\"m2cloud\"})"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "CPU by Pod",
+      "gridPos": {
+        "x": 0,
+        "y": 4,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "sum(rate(container_cpu_usage_seconds_total{namespace=\"m2cloud\",container!=\"\"}[5m])) by (pod)"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Memory by Pod",
+      "gridPos": {
+        "x": 12,
+        "y": 4,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "sum(container_memory_working_set_bytes{namespace=\"m2cloud\",container!=\"\"}) by (pod)"
+        }
+      ]
+    }
+  ]
+}

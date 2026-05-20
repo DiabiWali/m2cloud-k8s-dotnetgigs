@@ -1,0 +1,9 @@
+C4Context
+  title M2Cloud - Contexte
+  Person(user, "Utilisateur", "Accède à l'application web")
+  System_Boundary(k8s, "Cluster Kubernetes") {
+    System(dotnetgigs, "DotNetGigs", "Web + APIs + données")
+    System(obs, "Observabilité", "Prometheus, Grafana, EFK")
+  }
+  Rel(user, dotnetgigs, "HTTPS")
+  Rel(dotnetgigs, obs, "Métriques + logs")

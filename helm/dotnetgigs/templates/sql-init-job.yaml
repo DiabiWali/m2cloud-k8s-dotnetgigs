@@ -1,0 +1,54 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sql-data-init
+  namespace: {{ include "dotnetgigs.namespace" . }}
+  labels:
+    app.kubernetes.io/name: sql-data-init
+    app.kubernetes.io/instance: {{ .Release.Name }}
+  annotations:
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-weight": "5"
+    "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
+spec:
+  backoffLimit: 4
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: sql-data-init
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: sql-init
+          image: {{ include "dotnetgigs.image" (list . .Values.images.sqlData) }}
+          imagePullPolicy: {{ .Values.global.imagePullPolicy }}
+          command:
+            - /bin/bash
+            - -lc
+          args:
+            - |
+              echo "Waiting for SQL Server..."
+              for i in $(seq 1 60); do
+                /opt/mssql-tools/bin/sqlcmd \
+                  -S sql-data \
+                  -U sa \
+                  -P "${SA_PASSWORD}" \
+                  -Q "SELECT 1" && break
+
+                echo "SQL not ready yet... attempt ${i}/60"
+                sleep 5
+              done
+
+              echo "Initializing DotNetGigs databases..."
+              /opt/mssql-tools/bin/sqlcmd \
+                -S sql-data \
+                -U sa \
+                -P "${SA_PASSWORD}" \
+                -d master \
+                -i /SqlCmdScript.sql
+
+              echo "SQL initialization completed."
+          env:
+            - name: SA_PASSWORD
+              value: {{ .Values.secrets.sqlSaPassword | quote }}

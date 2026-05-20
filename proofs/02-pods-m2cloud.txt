@@ -1,0 +1,12 @@
+NAME                              READY   STATUS    RESTARTS   AGE     IP            NODE              NOMINATED NODE   READINESS GATES
+applicants-api-7c54685cbb-6n25g   1/1     Running   0          6m56s   10.244.1.59   m2cloud-worker2   <none>           <none>
+applicants-api-7c54685cbb-zz2js   1/1     Running   0          7m20s   10.244.1.58   m2cloud-worker2   <none>           <none>
+identity-api-7d4c765645-ggrlf     1/1     Running   0          7m20s   10.244.2.41   m2cloud-worker    <none>           <none>
+identity-api-7d4c765645-mcqf4     1/1     Running   0          6m56s   10.244.2.42   m2cloud-worker    <none>           <none>
+jobs-api-7dffbb8f44-dcvcm         1/1     Running   0          6m55s   10.244.1.60   m2cloud-worker2   <none>           <none>
+jobs-api-7dffbb8f44-vhm9t         1/1     Running   0          7m19s   10.244.1.57   m2cloud-worker2   <none>           <none>
+rabbitmq-c6c5766cd-cpdpb          1/1     Running   0          10m     10.244.2.39   m2cloud-worker    <none>           <none>
+sql-data-0                        1/1     Running   0          79m     10.244.1.17   m2cloud-worker2   <none>           <none>
+user-data-7846bc6b97-s2zkf        1/1     Running   0          79m     10.244.2.11   m2cloud-worker    <none>           <none>
+webmvc-5495dd64cf-pgss7           1/1     Running   0          24m     10.244.2.37   m2cloud-worker    <none>           <none>
+webmvc-5495dd64cf-qv2bx           1/1     Running   0          25m     10.244.1.50   m2cloud-worker2   <none>           <none>
