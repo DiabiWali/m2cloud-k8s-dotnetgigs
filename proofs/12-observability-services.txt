@@ -1,0 +1,13 @@
+NAME                                             TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE
+alertmanager-operated                            ClusterIP   None            <none>        9093/TCP,9094/TCP,9094/UDP   3h9m
+elasticsearch-master                             ClusterIP   10.96.12.115    <none>        9200/TCP,9300/TCP            3h8m
+elasticsearch-master-headless                    ClusterIP   None            <none>        9200/TCP,9300/TCP            3h8m
+fluent-bit                                       ClusterIP   10.96.9.52      <none>        2020/TCP                     176m
+kibana                                           ClusterIP   10.96.209.114   <none>        5601/TCP                     26m
+kube-prometheus-stack-alertmanager               ClusterIP   10.96.116.189   <none>        9093/TCP,8080/TCP            3h9m
+kube-prometheus-stack-grafana                    ClusterIP   10.96.80.101    <none>        80/TCP                       3h9m
+kube-prometheus-stack-kube-state-metrics         ClusterIP   10.96.178.234   <none>        8080/TCP                     3h9m
+kube-prometheus-stack-operator                   ClusterIP   10.96.8.197     <none>        443/TCP                      3h9m
+kube-prometheus-stack-prometheus                 ClusterIP   10.96.187.174   <none>        9090/TCP,8080/TCP            3h9m
+kube-prometheus-stack-prometheus-node-exporter   ClusterIP   10.96.154.165   <none>        9100/TCP                     3h9m
+prometheus-operated                              ClusterIP   None            <none>        9090/TCP                     3h9m
