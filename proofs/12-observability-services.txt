@@ -2,8 +2,8 @@ NAME                                             TYPE        CLUSTER-IP      EXT
 alertmanager-operated                            ClusterIP   None            <none>        9093/TCP,9094/TCP,9094/UDP   8h
 elasticsearch-master                             ClusterIP   10.96.12.115    <none>        9200/TCP,9300/TCP            8h
 elasticsearch-master-headless                    ClusterIP   None            <none>        9200/TCP,9300/TCP            8h
-fluent-bit                                       ClusterIP   10.96.9.52      <none>        2020/TCP                     7h50m
-kibana                                           ClusterIP   10.96.209.114   <none>        5601/TCP                     5h20m
+fluent-bit                                       ClusterIP   10.96.9.52      <none>        2020/TCP                     8h
+kibana                                           ClusterIP   10.96.209.114   <none>        5601/TCP                     5h37m
 kube-prometheus-stack-alertmanager               ClusterIP   10.96.116.189   <none>        9093/TCP,8080/TCP            8h
 kube-prometheus-stack-grafana                    ClusterIP   10.96.80.101    <none>        80/TCP                       8h
 kube-prometheus-stack-kube-state-metrics         ClusterIP   10.96.178.234   <none>        8080/TCP                     8h

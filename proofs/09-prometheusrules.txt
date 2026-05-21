@@ -1,5 +1,5 @@
 NAMESPACE       NAME                                                              AGE
-observability   dotnetgigs-slo-rules                                              7h8m
+observability   dotnetgigs-slo-rules                                              7h26m
 observability   kube-prometheus-stack-alertmanager.rules                          8h
 observability   kube-prometheus-stack-config-reloaders                            8h
 observability   kube-prometheus-stack-etcd                                        8h
@@ -35,4 +35,4 @@ observability   kube-prometheus-stack-node-network                              
 observability   kube-prometheus-stack-node.rules                                  8h
 observability   kube-prometheus-stack-prometheus                                  8h
 observability   kube-prometheus-stack-prometheus-operator                         8h
-observability   m2cloud-golden-signals                                            7h50m
+observability   m2cloud-golden-signals                                            8h

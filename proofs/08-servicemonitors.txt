@@ -1,6 +1,6 @@
 NAMESPACE       NAME                                             AGE
-observability   dotnetgigs-services                              7h8m
-observability   hello-api                                        43m
+observability   dotnetgigs-services                              7h26m
+observability   hello-api                                        60m
 observability   kube-prometheus-stack-alertmanager               8h
 observability   kube-prometheus-stack-apiserver                  8h
 observability   kube-prometheus-stack-coredns                    8h

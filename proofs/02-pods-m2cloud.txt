@@ -1,16 +1,15 @@
 NAME                                          READY   STATUS      RESTARTS       AGE     IP            NODE              NOMINATED NODE   READINESS GATES
-applicants-api-7c54685cbb-6n25g               1/1     Running     5 (98m ago)    5h56m   10.244.1.7    m2cloud-worker2   <none>           <none>
-applicants-api-7c54685cbb-zz2js               1/1     Running     5 (98m ago)    5h57m   10.244.1.4    m2cloud-worker2   <none>           <none>
-hello-api-b94c5b5-lhhml                       1/1     Running     0              43m     10.244.1.15   m2cloud-worker2   <none>           <none>
-hello-api-b94c5b5-wt76c                       1/1     Running     0              43m     10.244.2.20   m2cloud-worker    <none>           <none>
-identity-api-7d4c765645-ggrlf                 1/1     Running     5 (98m ago)    5h57m   10.244.2.10   m2cloud-worker    <none>           <none>
-identity-api-7d4c765645-mcqf4                 1/1     Running     5 (98m ago)    5h56m   10.244.2.9    m2cloud-worker    <none>           <none>
-jobs-api-7dffbb8f44-dcvcm                     1/1     Running     4 (99m ago)    5h56m   10.244.1.3    m2cloud-worker2   <none>           <none>
-jobs-api-7dffbb8f44-vhm9t                     1/1     Running     4 (99m ago)    5h57m   10.244.1.6    m2cloud-worker2   <none>           <none>
-rabbitmq-c6c5766cd-cpdpb                      1/1     Running     13 (46m ago)   6h      10.244.2.12   m2cloud-worker    <none>           <none>
-sql-data-0                                    1/1     Running     1 (101m ago)   7h8m    10.244.1.10   m2cloud-worker2   <none>           <none>
-sql-data-backup-manual-20260521055807-qzmnh   0/1     Completed   0              13m     10.244.2.27   m2cloud-worker    <none>           <none>
-user-data-7846bc6b97-s2zkf                    1/1     Running     1 (101m ago)   7h8m    10.244.2.5    m2cloud-worker    <none>           <none>
-webmvc-5495dd64cf-fc9pz                       1/1     Running     0              2m20s   10.244.1.25   m2cloud-worker2   <none>           <none>
-webmvc-5495dd64cf-h8s6r                       1/1     Running     0              11m     10.244.1.22   m2cloud-worker2   <none>           <none>
-webmvc-5495dd64cf-pgss7                       1/1     Running     1 (101m ago)   6h14m   10.244.2.4    m2cloud-worker    <none>           <none>
+applicants-api-7c54685cbb-6n25g               1/1     Running     5 (115m ago)   6h14m   10.244.1.7    m2cloud-worker2   <none>           <none>
+applicants-api-7c54685cbb-zz2js               1/1     Running     5 (115m ago)   6h14m   10.244.1.4    m2cloud-worker2   <none>           <none>
+hello-api-b94c5b5-lhhml                       1/1     Running     0              60m     10.244.1.15   m2cloud-worker2   <none>           <none>
+hello-api-b94c5b5-wt76c                       1/1     Running     0              60m     10.244.2.20   m2cloud-worker    <none>           <none>
+identity-api-7d4c765645-ggrlf                 1/1     Running     5 (115m ago)   6h14m   10.244.2.10   m2cloud-worker    <none>           <none>
+identity-api-7d4c765645-mcqf4                 1/1     Running     5 (115m ago)   6h14m   10.244.2.9    m2cloud-worker    <none>           <none>
+jobs-api-7dffbb8f44-dcvcm                     1/1     Running     4 (116m ago)   6h14m   10.244.1.3    m2cloud-worker2   <none>           <none>
+jobs-api-7dffbb8f44-vhm9t                     1/1     Running     4 (116m ago)   6h14m   10.244.1.6    m2cloud-worker2   <none>           <none>
+rabbitmq-c6c5766cd-cpdpb                      0/1     Running     14 (3s ago)    6h17m   10.244.2.12   m2cloud-worker    <none>           <none>
+sql-data-0                                    1/1     Running     1 (118m ago)   7h26m   10.244.1.10   m2cloud-worker2   <none>           <none>
+sql-data-backup-manual-20260521055807-qzmnh   0/1     Completed   0              31m     10.244.2.27   m2cloud-worker    <none>           <none>
+user-data-7846bc6b97-s2zkf                    1/1     Running     1 (118m ago)   7h26m   10.244.2.5    m2cloud-worker    <none>           <none>
+webmvc-5495dd64cf-h8s6r                       1/1     Running     0              29m     10.244.1.22   m2cloud-worker2   <none>           <none>
+webmvc-5495dd64cf-pgss7                       1/1     Running     1 (118m ago)   6h31m   10.244.2.4    m2cloud-worker    <none>           <none>

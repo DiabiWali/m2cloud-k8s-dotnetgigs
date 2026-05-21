@@ -1,80 +1,80 @@
-[2026/05/21 04:11:37.272] [ warn] [engine] failed to flush chunk '1-1779336686.273847606.flb', retry in 7 seconds: task_id=26, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:11:37.272] [ warn] [engine] failed to flush chunk '1-1779336686.364962013.flb', retry in 9 seconds: task_id=27, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:11:37.274] [error] [engine] chunk '1-1779336689.274427811.flb' cannot be retried: task_id=6, input=tail.0 > output=es.0
-[2026/05/21 04:11:38.273] [ warn] [engine] failed to flush chunk '1-1779336697.272273379.flb', retry in 11 seconds: task_id=1, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:11:38.771] [error] [upstream] connection #50 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:38.771] [ warn] [engine] failed to flush chunk '1-1779336687.274686089.flb', retry in 9 seconds: task_id=29, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:11:39.273] [ warn] [engine] failed to flush chunk '1-1779336698.273942916.flb', retry in 10 seconds: task_id=6, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:11:40.271] [error] [upstream] connection #71 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:40.271] [error] [upstream] connection #118 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:40.271] [error] [upstream] connection #117 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:40.271] [error] [upstream] connection #119 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:40.271] [error] [upstream] connection #112 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:40.271] [error] [upstream] connection #46 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:40.273] [error] [engine] chunk '1-1779336669.187587572.flb' cannot be retried: task_id=18, input=tail.0 > output=es.0
-[2026/05/21 04:11:40.273] [error] [engine] chunk '1-1779336681.273935758.flb' cannot be retried: task_id=8, input=tail.0 > output=es.0
-[2026/05/21 04:11:40.273] [ warn] [engine] failed to flush chunk '1-1779336688.273197236.flb', retry in 11 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:11:40.273] [ warn] [engine] failed to flush chunk '1-1779336690.209876340.flb', retry in 9 seconds: task_id=7, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:11:40.273] [error] [engine] chunk '1-1779336670.186550296.flb' cannot be retried: task_id=10, input=tail.0 > output=es.0
-[2026/05/21 04:11:40.273] [error] [engine] chunk '1-1779336671.93753509.flb' cannot be retried: task_id=14, input=tail.0 > output=es.0
-[2026/05/21 04:11:40.273] [error] [engine] chunk '1-1779336678.274053086.flb' cannot be retried: task_id=23, input=tail.0 > output=es.0
-[2026/05/21 04:11:41.362] [error] [engine] chunk '1-1779336690.274389364.flb' cannot be retried: task_id=12, input=tail.0 > output=es.0
-[2026/05/21 04:11:41.860] [error] [upstream] connection #122 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:41.860] [error] [engine] chunk '1-1779336674.275386118.flb' cannot be retried: task_id=17, input=tail.0 > output=es.0
-[2026/05/21 04:11:42.362] [error] [engine] chunk '1-1779336692.274415920.flb' cannot be retried: task_id=31, input=tail.0 > output=es.0
-[2026/05/21 04:11:43.360] [error] [upstream] connection #121 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:43.360] [error] [upstream] connection #129 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:43.361] [error] [engine] chunk '1-1779336686.512517103.flb' cannot be retried: task_id=28, input=tail.0 > output=es.0
-[2026/05/21 04:11:43.361] [error] [engine] chunk '1-1779336671.274194017.flb' cannot be retried: task_id=4, input=tail.0 > output=es.0
-[2026/05/21 04:11:43.362] [ warn] [engine] failed to flush chunk '1-1779336702.362647070.flb', retry in 8 seconds: task_id=14, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:11:44.362] [error] [engine] chunk '1-1779336686.273847606.flb' cannot be retried: task_id=26, input=tail.0 > output=es.0
-[2026/05/21 04:11:44.860] [error] [upstream] connection #120 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:44.860] [error] [upstream] connection #110 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:44.860] [error] [engine] chunk '1-1779336684.671561551.flb' cannot be retried: task_id=24, input=tail.0 > output=es.0
-[2026/05/21 04:11:44.860] [error] [upstream] connection #123 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:44.860] [error] [engine] chunk '1-1779336683.274235093.flb' cannot be retried: task_id=5, input=tail.0 > output=es.0
-[2026/05/21 04:11:44.860] [ warn] [engine] failed to flush chunk '1-1779336693.274162861.flb', retry in 10 seconds: task_id=32, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:11:45.363] [ warn] [engine] failed to flush chunk '1-1779336704.362850860.flb', retry in 6 seconds: task_id=5, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:11:46.360] [error] [upstream] connection #125 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:46.360] [error] [upstream] connection #116 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:46.360] [error] [upstream] connection #49 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:46.360] [error] [upstream] connection #111 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:46.362] [ warn] [engine] failed to flush chunk '1-1779336694.273022368.flb', retry in 6 seconds: task_id=11, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:11:46.362] [error] [engine] chunk '1-1779336685.272214947.flb' cannot be retried: task_id=25, input=tail.0 > output=es.0
-[2026/05/21 04:11:46.362] [error] [engine] chunk '1-1779336675.274058536.flb' cannot be retried: task_id=15, input=tail.0 > output=es.0
-[2026/05/21 04:11:46.362] [error] [engine] chunk '1-1779336678.85393555.flb' cannot be retried: task_id=22, input=tail.0 > output=es.0
-[2026/05/21 04:11:46.362] [error] [engine] chunk '1-1779336686.364962013.flb' cannot be retried: task_id=27, input=tail.0 > output=es.0
-[2026/05/21 04:11:47.362] [error] [engine] chunk '1-1779336687.274686089.flb' cannot be retried: task_id=29, input=tail.0 > output=es.0
-[2026/05/21 04:11:47.860] [error] [upstream] connection #70 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:47.860] [error] [upstream] connection #113 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:47.860] [error] [engine] chunk '1-1779336679.272633752.flb' cannot be retried: task_id=2, input=tail.0 > output=es.0
-[2026/05/21 04:11:47.860] [ warn] [engine] failed to flush chunk '1-1779336696.273825763.flb', retry in 9 seconds: task_id=16, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:11:48.362] [ warn] [engine] failed to flush chunk '1-1779336708.174483848.flb', retry in 8 seconds: task_id=22, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:11:49.360] [error] [upstream] connection #130 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:49.361] [ warn] [engine] failed to flush chunk '1-1779336698.889053674.flb', retry in 7 seconds: task_id=20, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:11:49.382] [error] [net] TCP connection failed: elasticsearch-master.observability.svc.cluster.local:9200 (Connection refused)
-[2026/05/21 04:11:49.383] [ warn] [engine] failed to flush chunk '1-1779336707.362669145.flb', retry in 9 seconds: task_id=2, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:11:50.372] [error] [net] TCP connection failed: elasticsearch-master.observability.svc.cluster.local:9200 (Connection refused)
-[2026/05/21 04:11:50.372] [error] [engine] chunk '1-1779336690.209876340.flb' cannot be retried: task_id=7, input=tail.0 > output=es.0
-[2026/05/21 04:11:50.860] [error] [upstream] connection #71 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:50.860] [error] [upstream] connection #46 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:50.860] [error] [engine] chunk '1-1779336694.184889994.flb' cannot be retried: task_id=33, input=tail.0 > output=es.0
-[2026/05/21 04:11:50.860] [ warn] [engine] failed to flush chunk '1-1779336699.273962151.flb', retry in 8 seconds: task_id=21, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:11:51.460] [error] [net] TCP connection failed: elasticsearch-master.observability.svc.cluster.local:9200 (Connection refused)
-[2026/05/21 04:11:51.460] [error] [engine] chunk '1-1779336695.273984538.flb' cannot be retried: task_id=9, input=tail.0 > output=es.0
-[2026/05/21 04:11:52.360] [error] [upstream] connection #75 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:52.360] [error] [upstream] connection #112 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:52.360] [error] [upstream] connection #114 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:52.360] [error] [upstream] connection #74 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:52.360] [error] [upstream] connection #115 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:52.361] [ warn] [engine] failed to flush chunk '1-1779336700.273203488.flb', retry in 11 seconds: task_id=8, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:11:52.361] [error] [engine] chunk '1-1779336691.272169606.flb' cannot be retried: task_id=30, input=tail.0 > output=es.0
-[2026/05/21 04:11:52.361] [error] [engine] chunk '1-1779336684.274509456.flb' cannot be retried: task_id=19, input=tail.0 > output=es.0
-[2026/05/21 04:11:52.361] [ warn] [engine] failed to flush chunk '1-1779336701.179842715.flb', retry in 11 seconds: task_id=10, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:11:52.361] [ warn] [engine] failed to flush chunk '1-1779336701.362732892.flb', retry in 8 seconds: task_id=12, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:11:52.484] [error] [net] TCP connection failed: elasticsearch-master.observability.svc.cluster.local:9200 (Connection refused)
-[2026/05/21 04:11:52.484] [ warn] [engine] failed to flush chunk '1-1779336706.362284254.flb', retry in 7 seconds: task_id=15, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:11:53.444] [error] [net] TCP connection failed: elasticsearch-master.observability.svc.cluster.local:9200 (Connection refused)
-[2026/05/21 04:11:53.444] [ warn] [engine] failed to flush chunk '1-1779336708.363139497.flb', retry in 9 seconds: task_id=23, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:11:53.860] [error] [upstream] connection #117 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 04:11:53.860] [error] [engine] chunk '1-1779336682.272904270.flb' cannot be retried: task_id=3, input=tail.0 > output=es.0
+[2026/05/21 04:29:07.096] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
+{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
+
+[2026/05/21 04:29:07.096] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
+{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
+
+[2026/05/21 04:29:07.096] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
+{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
+
+[2026/05/21 04:29:07.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
+{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
+
+[2026/05/21 04:29:07.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
+{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
+
+[2026/05/21 04:29:07.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
+{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
+
+[2026/05/21 04:29:07.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
+{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
+
+[2026/05/21 04:29:07.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
+{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
+
+[2026/05/21 04:29:07.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
+{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
+
+[2026/05/21 04:29:07.098] [error] [engine] chunk '1-1779337739.94260387.flb' cannot be retried: task_id=22, input=tail.0 > output=es.0
+[2026/05/21 04:29:07.099] [ warn] [engine] failed to flush chunk '1-1779337746.303691138.flb', retry in 7 seconds: task_id=10, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:29:07.099] [ warn] [engine] failed to flush chunk '1-1779337746.96928475.flb', retry in 8 seconds: task_id=8, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:29:07.099] [ warn] [engine] failed to flush chunk '1-1779337746.98951836.flb', retry in 11 seconds: task_id=9, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:29:07.099] [ warn] [engine] failed to flush chunk '1-1779337746.410109112.flb', retry in 6 seconds: task_id=13, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:29:07.099] [ warn] [engine] failed to flush chunk '1-1779337746.538395171.flb', retry in 6 seconds: task_id=27, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:29:07.099] [error] [engine] chunk '1-1779337735.98214353.flb' cannot be retried: task_id=6, input=tail.0 > output=es.0
+[2026/05/21 04:29:07.099] [error] [engine] chunk '1-1779337736.98001399.flb' cannot be retried: task_id=11, input=tail.0 > output=es.0
+[2026/05/21 04:29:07.099] [error] [engine] chunk '1-1779337738.95081649.flb' cannot be retried: task_id=5, input=tail.0 > output=es.0
+[2026/05/21 04:29:08.098] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
+{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
+
+[2026/05/21 04:29:08.098] [error] [engine] chunk '1-1779337737.96272284.flb' cannot be retried: task_id=2, input=tail.0 > output=es.0
+[2026/05/21 04:29:08.098] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
+{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
+
+[2026/05/21 04:29:08.098] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
+{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
+
+[2026/05/21 04:29:08.098] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
+{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
+
+[2026/05/21 04:29:08.098] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
+{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
+
+[2026/05/21 04:29:08.099] [ warn] [engine] failed to flush chunk '1-1779337747.404088665.flb', retry in 6 seconds: task_id=22, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:29:08.099] [ warn] [engine] failed to flush chunk '1-1779337747.99192530.flb', retry in 11 seconds: task_id=6, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:29:08.099] [ warn] [engine] failed to flush chunk '1-1779337747.372781973.flb', retry in 7 seconds: task_id=11, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:29:08.099] [ warn] [engine] failed to flush chunk '1-1779337747.98777315.flb', retry in 11 seconds: task_id=5, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:29:09.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
+{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
+
+[2026/05/21 04:29:09.097] [ warn] [engine] failed to flush chunk '1-1779337748.97598218.flb', retry in 8 seconds: task_id=2, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:29:09.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
+{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
+
+[2026/05/21 04:29:09.097] [error] [engine] chunk '1-1779337742.95409715.flb' cannot be retried: task_id=7, input=tail.0 > output=es.0
+[2026/05/21 04:29:09.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
+{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
+
+[2026/05/21 04:29:09.097] [error] [engine] chunk '1-1779337740.95886492.flb' cannot be retried: task_id=4, input=tail.0 > output=es.0
+[2026/05/21 04:29:09.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
+{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
+
+[2026/05/21 04:29:09.097] [ warn] [engine] failed to flush chunk '1-1779337748.99221182.flb', retry in 10 seconds: task_id=28, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:29:10.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
+{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
+
+[2026/05/21 04:29:10.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
+{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
+
+[2026/05/21 04:29:10.097] [ warn] [engine] failed to flush chunk '1-1779337749.97510096.flb', retry in 11 seconds: task_id=7, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:29:10.097] [ warn] [engine] failed to flush chunk '1-1779337749.96912545.flb', retry in 10 seconds: task_id=4, input=tail.0 > output=es.0 (out_id=0)
