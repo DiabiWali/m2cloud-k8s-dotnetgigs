@@ -1,8 +1,8 @@
 NAME                   ADDRESSTYPE   PORTS        ENDPOINTS                 AGE
-applicants-api-c5vbp   IPv4          80           10.244.1.58,10.244.1.59   3h12m
-identity-api-dc4fj     IPv4          80           10.244.2.41,10.244.2.42   3h12m
-jobs-api-m86ck         IPv4          80           10.244.1.57,10.244.1.60   3h12m
-rabbitmq-p6hh8         IPv4          15672,5672   10.244.2.39               3h12m
-sql-data-z62b2         IPv4          1433         10.244.1.17               3h12m
-user-data-99sz7        IPv4          6379         10.244.2.11               3h12m
-webmvc-sgnwj           IPv4          80           10.244.1.50,10.244.2.37   3h12m
+applicants-api-c5vbp   IPv4          80           10.244.1.58,10.244.1.59   3h27m
+identity-api-dc4fj     IPv4          80           10.244.2.41,10.244.2.42   3h27m
+jobs-api-m86ck         IPv4          80           10.244.1.57,10.244.1.60   3h27m
+rabbitmq-p6hh8         IPv4          15672,5672   10.244.2.39               3h27m
+sql-data-z62b2         IPv4          1433         10.244.1.17               3h27m
+user-data-99sz7        IPv4          6379         10.244.2.11               3h27m
+webmvc-sgnwj           IPv4          80           10.244.1.50,10.244.2.37   3h27m

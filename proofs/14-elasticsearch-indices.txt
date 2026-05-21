@@ -1,4 +1,4 @@
 health status index                                     uuid                   pri rep docs.count docs.deleted store.size pri.store.size
 green  open   metrics-endpoint.metadata_current_default qOid1k-5S66iOySt7-72gg   1   0          0            0       225b           225b
 yellow open   fluent-bit-2026.05.20                     kV_tgwxMSQaUiYQlo-l7Vw   1   1       3664            0      1.7mb          1.7mb
-yellow open   fluent-bit-2026.05.21                     SkoXat35TKWR_8pr4hqD0w   1   1         29            0    373.5kb        373.5kb
+yellow open   fluent-bit-2026.05.21                     SkoXat35TKWR_8pr4hqD0w   1   1         29            0    520.6kb        520.6kb
