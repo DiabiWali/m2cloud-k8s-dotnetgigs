@@ -1,0 +1,18 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: hello-api
+  title: hello-api
+  description: API de démonstration onboardée depuis Backstage
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - api
+    - kubernetes
+    - helm
+    - gitops
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/platform-team
+  system: m2cloud-platform
