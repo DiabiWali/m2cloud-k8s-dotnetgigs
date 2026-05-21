@@ -1,0 +1,18 @@
+{{- if .Values.serviceMonitor.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: hello-api
+  namespace: {{ .Values.serviceMonitor.namespace }}
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: hello-api
+  namespaceSelector:
+    matchNames:
+      - m2cloud
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 30s
+{{- end }}

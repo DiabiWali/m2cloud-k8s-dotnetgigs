@@ -1,0 +1,44 @@
+name: CI - hello-api
+
+on:
+  push:
+    branches:
+      - main
+      - feat/developer-portal-backstage
+      - backstage-onboard-hello-api
+  pull_request:
+
+jobs:
+  build-test-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build container image
+        working-directory: apps/hello-api
+        run: docker build -t hello-api:ci .
+
+      - name: Smoke test container
+        run: |
+          docker run --rm -d --name hello-api-ci -p 8088:8080 hello-api:ci
+          sleep 3
+          curl -f http://localhost:8088/health
+          curl -f http://localhost:8088/version
+          curl -f http://localhost:8088/api/hello
+          curl -f http://localhost:8088/metrics
+          docker rm -f hello-api-ci
+
+      - name: Scan image with Trivy
+        run: |
+          docker run --rm \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            aquasec/trivy:latest \
+            image --severity HIGH,CRITICAL --exit-code 0 hello-api:ci
+
+      - name: Helm lint
+        run: helm lint apps/hello-api/helm
+
+      - name: Helm template
+        run: helm template hello-api apps/hello-api/helm -n m2cloud > /tmp/hello-api-rendered.yaml
