@@ -1,5 +1,5 @@
 NAME             REFERENCE                   TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
-applicants-api   Deployment/applicants-api   cpu: 0%/65%    2         4         2          7h26m
-hello-api        Deployment/hello-api        cpu: 2%/70%    2         5         2          60m
-jobs-api         Deployment/jobs-api         cpu: 0%/65%    2         4         2          7h26m
-webmvc           Deployment/webmvc           cpu: 25%/60%   2         5         2          7h26m
+applicants-api   Deployment/applicants-api   cpu: 0%/65%    2         4         2          18h
+hello-api        Deployment/hello-api        cpu: 2%/70%    2         5         2          11h
+jobs-api         Deployment/jobs-api         cpu: 4%/65%    2         4         2          18h
+webmvc           Deployment/webmvc           cpu: 25%/60%   2         5         4          18h

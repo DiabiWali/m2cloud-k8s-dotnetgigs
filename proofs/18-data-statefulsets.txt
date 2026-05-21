@@ -1,2 +1,2 @@
-NAME       READY   AGE     CONTAINERS   IMAGES
-sql-data   1/1     7h26m   sql-data     local/m2cloud/m2cloud-sql-data:1.0.0
+NAME       READY   AGE   CONTAINERS   IMAGES
+sql-data   1/1     18h   sql-data     local/m2cloud/m2cloud-sql-data:1.0.0

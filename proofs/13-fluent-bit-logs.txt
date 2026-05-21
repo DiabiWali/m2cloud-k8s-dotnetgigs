@@ -1,80 +1,80 @@
-[2026/05/21 04:29:07.096] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
-{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
-
-[2026/05/21 04:29:07.096] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
-{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
-
-[2026/05/21 04:29:07.096] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
-{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
-
-[2026/05/21 04:29:07.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
-{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
-
-[2026/05/21 04:29:07.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
-{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
-
-[2026/05/21 04:29:07.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
-{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
-
-[2026/05/21 04:29:07.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
-{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
-
-[2026/05/21 04:29:07.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
-{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
-
-[2026/05/21 04:29:07.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
-{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
-
-[2026/05/21 04:29:07.098] [error] [engine] chunk '1-1779337739.94260387.flb' cannot be retried: task_id=22, input=tail.0 > output=es.0
-[2026/05/21 04:29:07.099] [ warn] [engine] failed to flush chunk '1-1779337746.303691138.flb', retry in 7 seconds: task_id=10, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:29:07.099] [ warn] [engine] failed to flush chunk '1-1779337746.96928475.flb', retry in 8 seconds: task_id=8, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:29:07.099] [ warn] [engine] failed to flush chunk '1-1779337746.98951836.flb', retry in 11 seconds: task_id=9, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:29:07.099] [ warn] [engine] failed to flush chunk '1-1779337746.410109112.flb', retry in 6 seconds: task_id=13, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:29:07.099] [ warn] [engine] failed to flush chunk '1-1779337746.538395171.flb', retry in 6 seconds: task_id=27, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:29:07.099] [error] [engine] chunk '1-1779337735.98214353.flb' cannot be retried: task_id=6, input=tail.0 > output=es.0
-[2026/05/21 04:29:07.099] [error] [engine] chunk '1-1779337736.98001399.flb' cannot be retried: task_id=11, input=tail.0 > output=es.0
-[2026/05/21 04:29:07.099] [error] [engine] chunk '1-1779337738.95081649.flb' cannot be retried: task_id=5, input=tail.0 > output=es.0
-[2026/05/21 04:29:08.098] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
-{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
-
-[2026/05/21 04:29:08.098] [error] [engine] chunk '1-1779337737.96272284.flb' cannot be retried: task_id=2, input=tail.0 > output=es.0
-[2026/05/21 04:29:08.098] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
-{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
-
-[2026/05/21 04:29:08.098] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
-{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
-
-[2026/05/21 04:29:08.098] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
-{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
-
-[2026/05/21 04:29:08.098] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
-{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
-
-[2026/05/21 04:29:08.099] [ warn] [engine] failed to flush chunk '1-1779337747.404088665.flb', retry in 6 seconds: task_id=22, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:29:08.099] [ warn] [engine] failed to flush chunk '1-1779337747.99192530.flb', retry in 11 seconds: task_id=6, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:29:08.099] [ warn] [engine] failed to flush chunk '1-1779337747.372781973.flb', retry in 7 seconds: task_id=11, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:29:08.099] [ warn] [engine] failed to flush chunk '1-1779337747.98777315.flb', retry in 11 seconds: task_id=5, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:29:09.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
-{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
-
-[2026/05/21 04:29:09.097] [ warn] [engine] failed to flush chunk '1-1779337748.97598218.flb', retry in 8 seconds: task_id=2, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:29:09.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
-{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
-
-[2026/05/21 04:29:09.097] [error] [engine] chunk '1-1779337742.95409715.flb' cannot be retried: task_id=7, input=tail.0 > output=es.0
-[2026/05/21 04:29:09.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
-{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
-
-[2026/05/21 04:29:09.097] [error] [engine] chunk '1-1779337740.95886492.flb' cannot be retried: task_id=4, input=tail.0 > output=es.0
-[2026/05/21 04:29:09.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
-{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
-
-[2026/05/21 04:29:09.097] [ warn] [engine] failed to flush chunk '1-1779337748.99221182.flb', retry in 10 seconds: task_id=28, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:29:10.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
-{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
-
-[2026/05/21 04:29:10.097] [error] [output:es:es.0] HTTP status=401 URI=/_bulk, response:
-{"error":{"root_cause":[{"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}}],"type":"security_exception","reason":"unable to authenticate user [elastic] for REST request [/_bulk]","header":{"WWW-Authenticate":["Basic realm=\"security\" charset=\"UTF-8\"","Bearer realm=\"security\"","ApiKey"]}},"status":401}
-
-[2026/05/21 04:29:10.097] [ warn] [engine] failed to flush chunk '1-1779337749.97510096.flb', retry in 11 seconds: task_id=7, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 04:29:10.097] [ warn] [engine] failed to flush chunk '1-1779337749.96912545.flb', retry in 10 seconds: task_id=4, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:09:22.620] [ warn] [engine] failed to flush chunk '1-1779376162.524388962.flb', retry in 11 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:09:32.620] [ warn] [engine] failed to flush chunk '1-1779376172.524749139.flb', retry in 9 seconds: task_id=1, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:09:33.620] [error] [engine] chunk '1-1779376162.524388962.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:09:42.357] [error] [engine] chunk '1-1779376172.524749139.flb' cannot be retried: task_id=1, input=tail.0 > output=es.0
+[2026/05/21 15:09:43.365] [ warn] [engine] failed to flush chunk '1-1779376183.261130058.flb', retry in 11 seconds: task_id=1, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:09:53.366] [ warn] [engine] failed to flush chunk '1-1779376193.306175202.flb', retry in 11 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:09:54.357] [error] [engine] chunk '1-1779376183.261130058.flb' cannot be retried: task_id=1, input=tail.0 > output=es.0
+[2026/05/21 15:10:03.357] [ warn] [engine] failed to flush chunk '1-1779376203.261370535.flb', retry in 8 seconds: task_id=1, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:10:04.367] [error] [engine] chunk '1-1779376193.306175202.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:10:12.294] [error] [engine] chunk '1-1779376203.261370535.flb' cannot be retried: task_id=1, input=tail.0 > output=es.0
+[2026/05/21 15:10:14.279] [ warn] [engine] failed to flush chunk '1-1779376214.183591740.flb', retry in 8 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:10:22.280] [error] [engine] chunk '1-1779376214.183591740.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:10:24.280] [ warn] [engine] failed to flush chunk '1-1779376224.183767050.flb', retry in 9 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:10:33.279] [error] [engine] chunk '1-1779376224.183767050.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:10:34.293] [ warn] [engine] failed to flush chunk '1-1779376234.183957976.flb', retry in 7 seconds: task_id=1, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:10:42.137] [error] [engine] chunk '1-1779376234.183957976.flb' cannot be retried: task_id=1, input=tail.0 > output=es.0
+[2026/05/21 15:10:45.136] [ warn] [engine] failed to flush chunk '1-1779376245.40910550.flb', retry in 6 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:10:51.137] [error] [engine] chunk '1-1779376245.40910550.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:10:55.145] [ warn] [engine] failed to flush chunk '1-1779376255.86274966.flb', retry in 10 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:10:59.146] [ warn] [engine] failed to flush chunk '1-1779376258.640679030.flb', retry in 11 seconds: task_id=1, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:11:05.137] [error] [engine] chunk '1-1779376255.86274966.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:11:05.156] [ warn] [engine] failed to flush chunk '1-1779376265.40657104.flb', retry in 8 seconds: task_id=2, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:11:10.903] [error] [engine] chunk '1-1779376258.640679030.flb' cannot be retried: task_id=1, input=tail.0 > output=es.0
+[2026/05/21 15:11:13.895] [error] [engine] chunk '1-1779376265.40657104.flb' cannot be retried: task_id=2, input=tail.0 > output=es.0
+[2026/05/21 15:11:15.894] [ warn] [engine] failed to flush chunk '1-1779376275.797742691.flb', retry in 7 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:11:22.894] [error] [engine] chunk '1-1779376275.797742691.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:11:23.903] [ warn] [engine] failed to flush chunk '1-1779376283.636167645.flb', retry in 10 seconds: task_id=1, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:11:25.909] [ warn] [engine] failed to flush chunk '1-1779376285.797800296.flb', retry in 6 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:11:31.901] [error] [engine] chunk '1-1779376285.797800296.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:11:33.907] [error] [engine] chunk '1-1779376283.636167645.flb' cannot be retried: task_id=1, input=tail.0 > output=es.0
+[2026/05/21 15:11:35.894] [ warn] [engine] failed to flush chunk '1-1779376295.798131560.flb', retry in 7 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:11:43.856] [error] [engine] chunk '1-1779376295.798131560.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:11:46.856] [ warn] [engine] failed to flush chunk '1-1779376306.760304760.flb', retry in 8 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:11:54.856] [error] [engine] chunk '1-1779376306.760304760.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:11:56.856] [ warn] [engine] failed to flush chunk '1-1779376316.760124581.flb', retry in 7 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:12:03.856] [error] [engine] chunk '1-1779376316.760124581.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:12:06.856] [ warn] [engine] failed to flush chunk '1-1779376326.760333766.flb', retry in 8 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:12:15.050] [error] [engine] chunk '1-1779376326.760333766.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:12:17.050] [ warn] [engine] failed to flush chunk '1-1779376336.953762106.flb', retry in 7 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:12:24.050] [error] [engine] chunk '1-1779376336.953762106.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:12:28.069] [ warn] [engine] failed to flush chunk '1-1779376347.973197850.flb', retry in 9 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:12:37.068] [error] [engine] chunk '1-1779376347.973197850.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:12:38.077] [ warn] [engine] failed to flush chunk '1-1779376357.973073997.flb', retry in 6 seconds: task_id=1, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:12:43.900] [error] [engine] chunk '1-1779376357.973073997.flb' cannot be retried: task_id=1, input=tail.0 > output=es.0
+[2026/05/21 15:12:47.887] [ warn] [engine] failed to flush chunk '1-1779376367.776873766.flb', retry in 10 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:12:58.923] [ warn] [engine] failed to flush chunk '1-1779376378.827442847.flb', retry in 8 seconds: task_id=1, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:12:58.924] [error] [engine] chunk '1-1779376367.776873766.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:13:06.933] [error] [engine] chunk '1-1779376378.827442847.flb' cannot be retried: task_id=1, input=tail.0 > output=es.0
+[2026/05/21 15:13:08.923] [ warn] [engine] failed to flush chunk '1-1779376388.827615168.flb', retry in 7 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:13:16.309] [error] [engine] chunk '1-1779376388.827615168.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:13:19.310] [ warn] [engine] failed to flush chunk '1-1779376399.213579074.flb', retry in 7 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:13:26.309] [error] [engine] chunk '1-1779376399.213579074.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:13:29.317] [ warn] [engine] failed to flush chunk '1-1779376409.214196549.flb', retry in 9 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:13:38.310] [error] [engine] chunk '1-1779376409.214196549.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:13:39.319] [ warn] [engine] failed to flush chunk '1-1779376419.214343694.flb', retry in 11 seconds: task_id=1, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:13:50.175] [error] [engine] chunk '1-1779376419.214343694.flb' cannot be retried: task_id=1, input=tail.0 > output=es.0
+[2026/05/21 15:13:50.175] [ warn] [engine] failed to flush chunk '1-1779376430.79113012.flb', retry in 9 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:13:59.174] [error] [engine] chunk '1-1779376430.79113012.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:14:00.184] [ warn] [engine] failed to flush chunk '1-1779376440.78904589.flb', retry in 7 seconds: task_id=1, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:14:07.175] [error] [engine] chunk '1-1779376440.78904589.flb' cannot be retried: task_id=1, input=tail.0 > output=es.0
+[2026/05/21 15:14:10.184] [ warn] [engine] failed to flush chunk '1-1779376450.79521567.flb', retry in 11 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:14:21.133] [ warn] [engine] failed to flush chunk '1-1779376461.37337969.flb', retry in 6 seconds: task_id=1, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:14:21.134] [error] [engine] chunk '1-1779376450.79521567.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:14:27.133] [error] [engine] chunk '1-1779376461.37337969.flb' cannot be retried: task_id=1, input=tail.0 > output=es.0
+[2026/05/21 15:14:29.133] [ warn] [engine] failed to flush chunk '1-1779376468.894145926.flb', retry in 6 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:14:31.133] [ warn] [engine] failed to flush chunk '1-1779376471.37193277.flb', retry in 6 seconds: task_id=1, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:14:35.142] [error] [engine] chunk '1-1779376468.894145926.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:14:37.133] [error] [engine] chunk '1-1779376471.37193277.flb' cannot be retried: task_id=1, input=tail.0 > output=es.0
+[2026/05/21 15:14:41.133] [ warn] [engine] failed to flush chunk '1-1779376481.37487857.flb', retry in 11 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:14:52.048] [error] [engine] chunk '1-1779376481.37487857.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:14:52.049] [ warn] [engine] failed to flush chunk '1-1779376491.952627179.flb', retry in 8 seconds: task_id=1, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:15:00.049] [error] [engine] chunk '1-1779376491.952627179.flb' cannot be retried: task_id=1, input=tail.0 > output=es.0
+[2026/05/21 15:15:02.057] [ warn] [engine] failed to flush chunk '1-1779376501.983939425.flb', retry in 11 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:15:03.084] [ warn] [engine] failed to flush chunk '1-1779376502.529454591.flb', retry in 6 seconds: task_id=3, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:15:04.058] [ warn] [engine] failed to flush chunk '1-1779376503.136537911.flb', retry in 7 seconds: task_id=2, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:15:09.049] [error] [engine] chunk '1-1779376502.529454591.flb' cannot be retried: task_id=3, input=tail.0 > output=es.0
+[2026/05/21 15:15:11.048] [error] [engine] chunk '1-1779376503.136537911.flb' cannot be retried: task_id=2, input=tail.0 > output=es.0
+[2026/05/21 15:15:12.058] [ warn] [engine] failed to flush chunk '1-1779376511.953325384.flb', retry in 7 seconds: task_id=2, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 15:15:13.060] [error] [engine] chunk '1-1779376501.983939425.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
+[2026/05/21 15:15:19.910] [error] [engine] chunk '1-1779376511.953325384.flb' cannot be retried: task_id=2, input=tail.0 > output=es.0

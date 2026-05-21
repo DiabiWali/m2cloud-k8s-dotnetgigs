@@ -1,5 +1,5 @@
 NAME                            SCHEDULE    TIMEZONE   SUSPEND   ACTIVE   LAST SCHEDULE   AGE   CONTAINERS   IMAGES                                 SELECTOR
-cronjob.batch/sql-data-backup   0 2 * * *   <none>     False     0        <none>          36m   sql-backup   local/m2cloud/m2cloud-sql-data:1.0.0   <none>
+cronjob.batch/sql-data-backup   0 2 * * *   <none>     False     0        <none>          11h   sql-backup   local/m2cloud/m2cloud-sql-data:1.0.0   <none>
 
 NAME                                              STATUS     COMPLETIONS   DURATION   AGE   CONTAINERS   IMAGES                                 SELECTOR
-job.batch/sql-data-backup-manual-20260521055807   Complete   1/1           5s         31m   sql-backup   local/m2cloud/m2cloud-sql-data:1.0.0   batch.kubernetes.io/controller-uid=37029166-1078-4aeb-836e-d63dec9a69b7
+job.batch/sql-data-backup-manual-20260521055807   Complete   1/1           5s         11h   sql-backup   local/m2cloud/m2cloud-sql-data:1.0.0   batch.kubernetes.io/controller-uid=37029166-1078-4aeb-836e-d63dec9a69b7

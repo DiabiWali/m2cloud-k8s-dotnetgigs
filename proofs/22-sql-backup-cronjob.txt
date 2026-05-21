@@ -104,8 +104,4 @@ Pod Template:
   Tolerations:       <none>
 Last Schedule Time:  <unset>
 Active Jobs:         <none>
-Events:
-  Type     Reason         Age                From                Message
-  ----     ------         ----               ----                -------
-  Warning  UnexpectedJob  36m (x3 over 36m)  cronjob-controller  Saw a job that the controller did not create or forgot: sql-data-backup-manual-20260521055253
-  Warning  UnexpectedJob  31m (x5 over 31m)  cronjob-controller  Saw a job that the controller did not create or forgot: sql-data-backup-manual-20260521055807
+Events:              <none>

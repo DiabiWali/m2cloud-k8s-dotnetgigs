@@ -6,8 +6,8 @@ API Version:  argoproj.io/v1alpha1
 Kind:         Application
 Metadata:
   Creation Timestamp:  2026-05-20T23:37:30Z
-  Generation:          183
-  Resource Version:    54331
+  Generation:          389
+  Resource Version:    113015
   UID:                 f29c6192-28d1-44ad-bb26-94b95dec0356
 Spec:
   Destination:
@@ -39,7 +39,7 @@ Spec:
 Status:
   Controller Namespace:  argocd
   Health:
-    Last Transition Time:  2026-05-21T04:29:06Z
+    Last Transition Time:  2026-05-21T15:15:02Z
     Status:                Progressing
   History:
     Deploy Started At:  2026-05-20T23:39:50Z
@@ -519,7 +519,7 @@ Status:
         Path:              helm/dotnetgigs
         Repo URL:          https://github.com/DiabiWali/m2cloud-k8s-dotnetgigs.git
         Target Revision:   feat/developer-portal-backstage
-  Reconciled At:           2026-05-21T04:29:06Z
+  Reconciled At:           2026-05-21T15:15:02Z
   Resource Health Source:  appTree
   Resources:
     Kind:       ConfigMap
@@ -778,37 +778,13 @@ Status:
         Path:             helm/dotnetgigs
         Repo URL:         https://github.com/DiabiWali/m2cloud-k8s-dotnetgigs.git
         Target Revision:  feat/developer-portal-backstage
-    Revision:             a37597fa84b7bc81239cc5177eaf4665b245549b
+    Revision:             f55b2c6fe8c6d7df1cbc560e9b619ceaa9bfb462
     Status:               Synced
 Events:
-  Type    Reason              Age    From                           Message
-  ----    ------              ----   ----                           -------
-  Normal  ResourceUpdated     53m    argocd-application-controller  Updated sync status: Synced -> OutOfSync
-  Normal  ResourceUpdated     53m    argocd-application-controller  Updated health status: Healthy -> Progressing
-  Normal  ResourceUpdated     52m    argocd-application-controller  Updated health status: Progressing -> Healthy
-  Normal  ResourceUpdated     43m    argocd-application-controller  Updated sync status: OutOfSync -> Synced
-  Normal  ResourceUpdated     36m    argocd-application-controller  Updated sync status: Synced -> OutOfSync
-  Normal  ResourceUpdated     36m    argocd-application-controller  Updated health status: Healthy -> Progressing
-  Normal  ResourceUpdated     35m    argocd-application-controller  Updated health status: Progressing -> Healthy
-  Normal  ResourceUpdated     31m    argocd-application-controller  Updated health status: Healthy -> Progressing
-  Normal  ResourceUpdated     30m    argocd-application-controller  Updated health status: Progressing -> Healthy
-  Normal  ResourceUpdated     29m    argocd-application-controller  Updated health status: Healthy -> Progressing
-  Normal  ResourceUpdated     28m    argocd-application-controller  Updated health status: Progressing -> Healthy
-  Normal  ResourceUpdated     21m    argocd-application-controller  Updated health status: Healthy -> Progressing
-  Normal  ResourceUpdated     21m    argocd-application-controller  Updated sync status: OutOfSync -> Synced
-  Normal  ResourceUpdated     21m    argocd-application-controller  Updated health status: Progressing -> Healthy
-  Normal  OperationCompleted  21m    argocd-application-controller  Sync operation to 1affb027e63997d9124397a7e20ecc5b9b04e7e2 succeeded
-  Normal  ResourceUpdated     21m    argocd-application-controller  Updated sync status: Synced -> OutOfSync
-  Normal  ResourceUpdated     21m    argocd-application-controller  Updated health status: Healthy -> Progressing
-  Normal  ResourceUpdated     21m    argocd-application-controller  Updated health status: Progressing -> Healthy
-  Normal  ResourceUpdated     19m    argocd-application-controller  Updated sync status: OutOfSync -> Synced
-  Normal  ResourceUpdated     19m    argocd-application-controller  Updated health status: Healthy -> Progressing
-  Normal  OperationCompleted  19m    argocd-application-controller  Sync operation to db283eaee014e27a2cd2fbece1eb91e689883036 succeeded
-  Normal  ResourceUpdated     19m    argocd-application-controller  Updated health status: Progressing -> Healthy
-  Normal  ResourceUpdated     16m    argocd-application-controller  Updated health status: Healthy -> Progressing
-  Normal  ResourceUpdated     16m    argocd-application-controller  Updated health status: Progressing -> Healthy
-  Normal  ResourceUpdated     2m39s  argocd-application-controller  Updated health status: Healthy -> Progressing
-  Normal  ResourceUpdated     2m39s  argocd-application-controller  Updated health status: Progressing -> Healthy
-  Normal  ResourceUpdated     2m34s  argocd-application-controller  Updated health status: Healthy -> Progressing
-  Normal  ResourceUpdated     2m34s  argocd-application-controller  Updated health status: Progressing -> Healthy
-  Normal  ResourceUpdated     5s     argocd-application-controller  Updated health status: Healthy -> Progressing
+  Type    Reason           Age   From                           Message
+  ----    ------           ----  ----                           -------
+  Normal  ResourceUpdated  109m  argocd-application-controller  Updated health status: Healthy -> Progressing
+  Normal  ResourceUpdated  109m  argocd-application-controller  Updated health status: Progressing -> Healthy
+  Normal  ResourceUpdated  101m  argocd-application-controller  Updated health status: Healthy -> Progressing
+  Normal  ResourceUpdated  101m  argocd-application-controller  Updated health status: Progressing -> Healthy
+  Normal  ResourceUpdated  19s   argocd-application-controller  Updated health status: Healthy -> Progressing
