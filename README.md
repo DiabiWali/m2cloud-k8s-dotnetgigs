@@ -275,3 +275,24 @@ ghcr.io/diabiwali/...
 ```
 
 puis de laisser Argo CD déployer directement depuis les images publiées.
+
+## Developer Portal — Backstage
+
+Le projet intègre un portail développeur Backstage afin de démontrer une approche Platform Engineering.
+
+Backstage permet de :
+
+- centraliser le catalogue applicatif ;
+- documenter les composants de la plateforme ;
+- créer une nouvelle application via un template standardisé ;
+- générer une Pull Request GitHub ;
+- déclencher les contrôles CI/CD ;
+- intégrer le déploiement GitOps avec Argo CD.
+
+Une application témoin, `hello-api`, a été générée depuis Backstage. Elle dispose d'un Dockerfile, d'un Helm chart, d'un workflow GitHub Actions, d'un manifeste Argo CD, de probes Kubernetes, d'un HPA, d'un PDB et d'un ServiceMonitor.
+
+Documentation associée :
+
+- `docs/DEVELOPER-PORTAL.md`
+- `docs/APP-ONBOARDING-BACKSTAGE.md`
+- `docs/BACKSTAGE-DEMO-FLOW.md`
