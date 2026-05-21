@@ -1,0 +1,20 @@
+replicas: 1
+minimumMasterNodes: 1
+
+clusterHealthCheckParams: "wait_for_status=yellow&timeout=1s"
+
+resources:
+  requests:
+    cpu: "500m"
+    memory: "1Gi"
+  limits:
+    cpu: "1"
+    memory: "2Gi"
+
+esJavaOpts: "-Xmx512m -Xms512m"
+
+volumeClaimTemplate:
+  accessModes: ["ReadWriteOnce"]
+  resources:
+    requests:
+      storage: 5Gi
