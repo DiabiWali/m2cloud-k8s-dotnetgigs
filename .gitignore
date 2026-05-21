@@ -2,6 +2,12 @@
 .env
 *.local
 
+# Local certificates generated for kind demo
+.certs/
+
+# Upstream application source pulled by make bootstrap
+appscore/
+
 # OS / editors
 .DS_Store
 .vscode/
@@ -26,10 +32,3 @@ build/
 # Kubernetes generated files
 kubeconfig
 *.kubeconfig
-
-# Optional upstream app source pulled by make bootstrap
-# Keep ignored if the repo is an overlay that fetches upstream automatically.
-appscore/
-
-# Local certificates generated for kind demo
-.certs/

@@ -12,110 +12,266 @@ Ce repo apporte une réponse structurée autour de trois axes:
 2. **Run Kubernetes**: Deployments, Services, Ingress HTTPS, HPA, probes, resources, RBAC, NetworkPolicy, PDB.
 3. **Operate**: Prometheus/Grafana, EFK, runbooks, tests de charge, démonstration HPA, CI/CD et matrice de conformité.
 
-## Démarrage rapide local avec kind
+## Démarrage rapide local
+
+Ce dépôt permet de déployer l’application DotNetGigs sur un cluster Kubernetes local `kind`.
+
+### Depuis zéro
 
 ```bash
+git clone https://github.com/DiabiWali/m2cloud-k8s-dotnetgigs.git
+cd m2cloud-k8s-dotnetgigs
 cp env.example .env
-nano .env
-
-make doctor
-make cluster
-make ingress
-make bootstrap
-make build
-make kind-load
-make tls
-make deploy
-make status
-make smoke
+make quickstart
 ```
 
-Ajoute l'entrée locale DNS si besoin:
+Ajouter l’entrée DNS locale.
+
+Sous Linux / WSL :
 
 ```bash
 echo "127.0.0.1 dotnetgigs.local" | sudo tee -a /etc/hosts
 ```
 
-Accès applicatif:
+Sous Windows, ajouter dans :
+
+```text
+C:\Windows\System32\drivers\etc\hosts
+```
+
+la ligne :
+
+```text
+127.0.0.1 dotnetgigs.local
+```
+
+Tester l’application :
+
+```bash
+make smoke
+```
+
+URL applicative :
 
 ```text
 https://dotnetgigs.local
 ```
 
-## Démonstration attendue en soutenance
+---
+
+## Redémarrage après extinction du PC
+
+Après redémarrage de la machine, il n’est généralement pas nécessaire de tout redéployer si Docker Desktop / kind a conservé les conteneurs.
+
+Vérifier l’état :
 
 ```bash
-make status      # état général du cluster
-make smoke       # test HTTPS
-make hpa         # montée en charge et autoscaling
-make evidence    # collecte des preuves techniques
+cd ~/projects/m2cloud-k8s-architecte
+make status
 ```
 
-Pour l'observabilité:
+Si les pods sont toujours `Running`, relancer uniquement les interfaces web souhaitées.
+
+---
+
+## Interfaces web
+
+Le projet expose plusieurs interfaces web pour piloter, superviser et diagnostiquer la plateforme Kubernetes.
+
+### Argo CD
+
+Argo CD permet de piloter le déploiement GitOps de l’application DotNetGigs depuis une interface web.
 
 ```bash
-make observability
-kubectl port-forward -n observability svc/kube-prometheus-stack-grafana 3000:80
+make pf-argocd
 ```
 
-Puis ouvrir `http://localhost:3000`.
-
-## Structure du dépôt
+URL :
 
 ```text
-.
-├── dockerfiles/                 # Dockerfiles multi-stage par service
-├── helm/dotnetgigs/             # Chart Helm complet de l'application
-├── environments/                # Valeurs dev/prod
-├── clusters/kind/               # Cluster local reproductible
-├── infra/opentofu/aks/          # Trajectoire cloud AKS optionnelle
-├── observability/               # Prometheus, Grafana, EFK
-├── policies/                    # Politiques Kyverno de gouvernance Kubernetes
-├── scripts/                     # Automatisation build/deploy/test/evidence
-├── tests/                       # Charge k6 et smoke tests
-├── architecture/                # Schémas C4, Mermaid et SVG
-└── docs/                        # Runbooks, ADR, sécurité, soutenance
+https://localhost:8080
 ```
 
-## Matrice de conformité rapide
+Utilisateur :
 
-| Exigence | Réponse dans ce repo |
-|---|---|
-| Dockerfiles par service | `dockerfiles/*.Dockerfile` |
-| Kubernetes / Helm | `helm/dotnetgigs/templates/*` |
-| Chart Helm complet | `helm/dotnetgigs/Chart.yaml`, `values.yaml`, `templates/` |
-| HTTPS externe | `templates/ingress.yaml`, `scripts/generate-tls-secret.sh` |
-| HPA | `templates/hpa.yaml`, `scripts/test-hpa.sh`, `tests/load/k6-hpa.js` |
-| Probes santé | Deployments applicatifs du chart Helm |
-| Ressources CPU/MEM/disque | `helm/dotnetgigs/values.yaml` |
-| RBAC | `templates/serviceaccounts-rbac.yaml` |
-| NetworkPolicy | `templates/networkpolicy.yaml` |
-| Prometheus / métriques | `observability/prometheus/*`, `templates/servicemonitor.yaml` |
-| EFK / logs | `observability/logging/efk/*` |
-| Schéma architecture | `architecture/architecture.svg`, `architecture/c4-container.mmd` |
-| Déploiement automatisé | `Makefile`, `scripts/*`, `.github/workflows/*` |
-| Documentation soutenance | `docs/DEMO-SOUTENANCE.md`, `docs/QUESTIONS-REPONSES.md` |
+```text
+admin
+```
 
-## Choix d'architecture
+Mot de passe :
 
-Le service `webmvc` est le seul exposé publiquement via Ingress HTTPS. Les APIs et les composants techniques restent en `ClusterIP`. Les flux sont restreints avec NetworkPolicy: le web appelle les APIs, les APIs accèdent à SQL/RabbitMQ, et `identity-api` accède à Redis `user-data`.
+```bash
+make argocd-password
+```
 
-Le chart sépare les paramètres applicatifs en ConfigMap et les données sensibles en Secret. Les workloads applicatifs disposent de probes, resources, RollingUpdate et PodDisruptionBudget. L'autoscaling est activé sur `webmvc`, `applicants-api` et `jobs-api`.
+Argo CD compare l’état déclaré dans GitHub avec l’état réel du cluster Kubernetes. L’objectif est d’avoir l’application en état :
 
-## Note MacBook Apple Silicon
+```text
+Healthy / Synced
+```
 
-SQL Server container est un point sensible sur Apple Silicon. Pour une démo locale fiable, utilise Colima en mode x86_64/Rosetta ou fais la démonstration sur AKS. Le runbook dédié est dans `docs/MACBOOK-M2-RUNBOOK.md`.
+### Kibana
 
-## Validation CI/CD
+Kibana permet d’explorer les logs collectés par Fluent Bit et stockés dans Elasticsearch.
 
-Le workflow GitHub Actions exécute:
+```bash
+make pf-kibana
+```
 
-- lint Helm;
-- rendu Helm;
-- validation Kubernetes avec kubeconform;
-- scan IaC avec Trivy;
-- workflow optionnel de build/push vers GHCR.
+URL :
 
-## Commande de rendu au professeur
+```text
+http://localhost:5601
+```
 
-Le mail et le sujet proposés sont prêts dans `docs/MAIL-RENDU.md`.
+Utilisateur :
+
+```text
+elastic
+```
+
+Mot de passe :
+
+```bash
+make kibana-password
+```
+
+Data View recommandée :
+
+```text
+Name: Kubernetes Logs
+Index pattern: fluent-bit*
+Timestamp field: @timestamp
+```
+
+Kibana permet de filtrer les logs par namespace, pod, conteneur ou message d’erreur.
+
+Exemples de filtres :
+
+```text
+kubernetes.namespace_name : "m2cloud"
+```
+
+```text
+kubernetes.container_name : "webmvc"
+```
+
+```text
+kubernetes.container_name : "jobs-api"
+```
+
+### Grafana
+
+Grafana permet de visualiser les métriques collectées par Prometheus.
+
+```bash
+make pf-grafana
+```
+
+URL :
+
+```text
+http://localhost:3000
+```
+
+Utilisateur :
+
+```text
+admin
+```
+
+Mot de passe :
+
+```bash
+make grafana-password
+```
+
+Grafana est utilisé pour suivre l’état du cluster, des pods, des ressources CPU/mémoire et des composants Kubernetes.
+
+---
+
+## Commandes utiles
+
+État global de la plateforme :
+
+```bash
+make status
+```
+
+Test HTTP de l’application :
+
+```bash
+make smoke
+```
+
+Génération des preuves techniques :
+
+```bash
+make proofs
+```
+
+Installation et accès Argo CD :
+
+```bash
+make argocd-install
+make argocd-app
+make pf-argocd
+```
+
+---
+
+## Chaîne d’exploitation
+
+Déploiement applicatif :
+
+```text
+GitHub
+  -> Argo CD
+  -> Helm
+  -> Kubernetes kind
+  -> DotNetGigs
+```
+
+Observabilité métriques :
+
+```text
+Pods / Nodes
+  -> Prometheus
+  -> Grafana
+```
+
+Observabilité logs :
+
+```text
+Pods Kubernetes
+  -> Fluent Bit
+  -> Elasticsearch
+  -> Kibana
+```
+
+---
+
+## Points d’attention
+
+Les images utilisées en local sont chargées dans le cluster kind avec :
+
+```bash
+make build
+make kind-load
+```
+
+Tant que les images utilisent le registre local :
+
+```text
+local/m2cloud
+```
+
+un nouveau cluster devra reconstruire et recharger les images.
+
+Une évolution possible est de publier les images dans GitHub Container Registry :
+
+```text
+ghcr.io/diabiwali/...
+```
+
+puis de laisser Argo CD déployer directement depuis les images publiées.

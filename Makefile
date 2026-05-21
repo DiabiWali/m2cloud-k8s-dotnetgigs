@@ -147,3 +147,4 @@ kibana-password:
 .PHONY: grafana-password
 grafana-password:
 	@kubectl get secret -n observability kube-prometheus-stack-grafana -o jsonpath="{.data.admin-password}" | base64 -d ; echo
+

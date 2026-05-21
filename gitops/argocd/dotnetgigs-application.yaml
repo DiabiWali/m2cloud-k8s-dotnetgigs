@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dotnetgigs
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/DiabiWali/m2cloud-k8s-dotnetgigs.git
+    targetRevision: main
+    path: helm/dotnetgigs
+    helm:
+      valueFiles:
+        - values.yaml
+        - ../../environments/dev/values-dev.yaml
+      parameters:
+        - name: global.imageRegistry
+          value: local/m2cloud
+        - name: global.imageTag
+          value: "1.0.0"
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: m2cloud
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
