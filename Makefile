@@ -10,7 +10,7 @@ INGRESS_HOST ?= dotnetgigs.local
 REGISTRY ?= ghcr.io/example
 IMAGE_TAG ?= 1.0.0
 
-.PHONY: help doctor bootstrap cluster ingress observability build push kind-load tls deploy validate render status smoke hpa rollout-demo canary-demo evidence uninstall clean
+.PHONY: help doctor bootstrap cluster ingress observability build push kind-load tls deploy validate render hpa rollout-demo canary-demo evidence uninstall clean
 
 help:
 	@echo "M2Cloud Kubernetes - commandes disponibles"
@@ -71,12 +71,6 @@ validate:
 render:
 	./scripts/render-helm.sh
 
-status:
-	./scripts/status.sh
-
-smoke:
-	./scripts/smoke-test.sh
-
 hpa:
 	./scripts/test-hpa.sh
 
@@ -94,3 +88,62 @@ uninstall:
 
 clean:
 	rm -rf _rendered _evidence charts/*.tgz
+
+# ============================================================
+# Local developer experience
+# ============================================================
+
+.PHONY: quickstart
+quickstart: doctor cluster ingress bootstrap build kind-load tls observability deploy
+	@echo ""
+	@echo "============================================================"
+	@echo "DotNetGigs est prêt."
+	@echo "URL: https://dotnetgigs.local"
+	@echo "Pense à ajouter 127.0.0.1 dotnetgigs.local dans le hosts Windows si besoin."
+	@echo "============================================================"
+
+.PHONY: status
+status:
+	./scripts/local/status.sh
+
+.PHONY: smoke
+smoke:
+	curl -k -I https://dotnetgigs.local
+
+.PHONY: proofs
+proofs:
+	./scripts/local/collect-proofs.sh
+
+.PHONY: pf-argocd
+pf-argocd:
+	./scripts/local/pf-argocd.sh
+
+.PHONY: pf-kibana
+pf-kibana:
+	./scripts/local/pf-kibana.sh
+
+.PHONY: pf-grafana
+pf-grafana:
+	./scripts/local/pf-grafana.sh
+
+.PHONY: argocd-install
+argocd-install:
+	kubectl create namespace argocd --dry-run=client -o yaml | kubectl apply -f -
+	kubectl apply -n argocd --server-side --force-conflicts -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+	kubectl rollout status deployment/argocd-server -n argocd --timeout=5m
+
+.PHONY: argocd-app
+argocd-app:
+	kubectl apply -f gitops/argocd/dotnetgigs-application.yaml
+
+.PHONY: argocd-password
+argocd-password:
+	@kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 -d ; echo
+
+.PHONY: kibana-password
+kibana-password:
+	@kubectl get secret -n observability elasticsearch-master-credentials -o jsonpath="{.data.password}" | base64 -d ; echo
+
+.PHONY: grafana-password
+grafana-password:
+	@kubectl get secret -n observability kube-prometheus-stack-grafana -o jsonpath="{.data.admin-password}" | base64 -d ; echo
