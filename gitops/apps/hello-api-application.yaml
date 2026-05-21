@@ -3,12 +3,26 @@ kind: Application
 metadata:
   name: hello-api
   namespace: argocd
+  labels:
+    app.kubernetes.io/name: hello-api
+    app.kubernetes.io/part-of: m2cloud-platform
+    app.kubernetes.io/managed-by: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/DiabiWali/m2cloud-k8s-dotnetgigs.git
-    targetRevision: main
+    targetRevision: feat/developer-portal-backstage
     path: apps/hello-api/helm
+    helm:
+      parameters:
+        - name: image.repository
+          value: hello-api
+        - name: image.tag
+          value: local
+        - name: image.pullPolicy
+          value: Never
+        - name: ingress.host
+          value: hello-api.dotnetgigs.local
   destination:
     server: https://kubernetes.default.svc
     namespace: m2cloud
@@ -16,3 +30,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
