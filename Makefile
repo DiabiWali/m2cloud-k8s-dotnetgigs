@@ -152,3 +152,7 @@ grafana-password:
 .PHONY: demo-backstage-flow
 demo-backstage-flow:
 	APP_NAME=$(APP_NAME) BASE_BRANCH=$(or $(BASE_BRANCH),feat/developer-portal-backstage) NAMESPACE=$(or $(NAMESPACE),m2cloud) KIND_CLUSTER_NAME=$(or $(KIND_CLUSTER_NAME),m2cloud) LOCAL_PORT=$(or $(LOCAL_PORT),8089) ./scripts/local/demo-backstage-flow.sh
+
+.PHONY: data-backup-demo
+data-backup-demo:
+	./scripts/local/data-backup-demo.sh

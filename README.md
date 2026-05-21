@@ -296,3 +296,23 @@ Documentation associée :
 - `docs/DEVELOPER-PORTAL.md`
 - `docs/APP-ONBOARDING-BACKSTAGE.md`
 - `docs/BACKSTAGE-DEMO-FLOW.md`
+
+## Orchestration des données
+
+Le projet couvre également les enjeux stateful liés aux données.
+
+La plateforme inclut :
+
+- SQL Server en StatefulSet ;
+- PVC pour la persistance ;
+- Job d'initialisation SQL ;
+- CronJob de sauvegarde logique ;
+- runbook de restauration ;
+- preuves Kubernetes dédiées ;
+- distinction entre données critiques, cache Redis et broker RabbitMQ.
+
+Documentation associée :
+
+- `docs/DATA-ORCHESTRATION.md`
+- `docs/DATA-RESTORE-RUNBOOK.md`
+- `docs/DATA-PRODUCTION-READINESS.md`

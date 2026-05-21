@@ -1,4 +1,4 @@
-NAME                    STATUS   ROLES           AGE     VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION                      CONTAINER-RUNTIME
-m2cloud-control-plane   Ready    control-plane   4h45m   v1.35.0   172.19.0.4    <none>        Debian GNU/Linux 12 (bookworm)   6.6.114.1-microsoft-standard-WSL2   containerd://2.2.0
-m2cloud-worker          Ready    <none>          4h45m   v1.35.0   172.19.0.3    <none>        Debian GNU/Linux 12 (bookworm)   6.6.114.1-microsoft-standard-WSL2   containerd://2.2.0
-m2cloud-worker2         Ready    <none>          4h45m   v1.35.0   172.19.0.2    <none>        Debian GNU/Linux 12 (bookworm)   6.6.114.1-microsoft-standard-WSL2   containerd://2.2.0
+NAME                    STATUS   ROLES           AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION                      CONTAINER-RUNTIME
+m2cloud-control-plane   Ready    control-plane   8h    v1.35.0   172.19.0.3    <none>        Debian GNU/Linux 12 (bookworm)   6.6.114.1-microsoft-standard-WSL2   containerd://2.2.0
+m2cloud-worker          Ready    <none>          8h    v1.35.0   172.19.0.2    <none>        Debian GNU/Linux 12 (bookworm)   6.6.114.1-microsoft-standard-WSL2   containerd://2.2.0
+m2cloud-worker2         Ready    <none>          8h    v1.35.0   172.19.0.4    <none>        Debian GNU/Linux 12 (bookworm)   6.6.114.1-microsoft-standard-WSL2   containerd://2.2.0

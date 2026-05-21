@@ -1,2 +1,3 @@
 NAME      	NAMESPACE	REVISION	UPDATED                                 	STATUS  	CHART           	APP VERSION
-dotnetgigs	m2cloud  	4       	2026-05-21 00:14:39.084919372 +0200 CEST	deployed	dotnetgigs-1.1.0	1.0.0      
+dotnetgigs	m2cloud  	7       	2026-05-21 05:57:45.405700041 +0200 CEST	deployed	dotnetgigs-1.1.0	1.0.0      
+hello-api 	m2cloud  	1       	2026-05-21 05:28:19.352983386 +0200 CEST	deployed	hello-api-0.1.0 	1.0.0      

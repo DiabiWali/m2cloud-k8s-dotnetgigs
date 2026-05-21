@@ -37,6 +37,16 @@ kubectl get pods -n argocd > proofs/17-argocd-pods.txt || true
 curl -k -I https://dotnetgigs.local > proofs/10-curl-home-headers.txt || true
 curl -k https://dotnetgigs.local | head -120 > proofs/11-curl-home-html.txt || true
 
+
+# Data orchestration proofs
+kubectl get statefulset -n m2cloud -o wide > proofs/18-data-statefulsets.txt || true
+kubectl get pvc -n m2cloud -o wide > proofs/19-data-pvc.txt || true
+kubectl get cronjob,job -n m2cloud -o wide > proofs/20-data-jobs-cronjobs.txt || true
+kubectl describe pvc sql-data-pvc -n m2cloud > proofs/21-sql-pvc-detail.txt || true
+kubectl describe cronjob sql-data-backup -n m2cloud > proofs/22-sql-backup-cronjob.txt || true
+kubectl exec -n m2cloud sql-data-0 -- sh -c 'ls -lh /var/opt/mssql/data/*.bak 2>/dev/null || true' > proofs/23-sql-backup-files.txt || true
+kubectl logs -n m2cloud statefulset/sql-data --tail=120 > proofs/24-sql-data-logs.txt || true
+
 tar -czf proofs-m2cloud-k8s.tar.gz proofs
 
 echo "Preuves générées dans ./proofs"

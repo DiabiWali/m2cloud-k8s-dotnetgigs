@@ -73,7 +73,7 @@ spec:
             matchExpressions:
               - key: app.kubernetes.io/name
                 operator: In
-                values: ["applicants-api", "jobs-api", "sql-data-init"]
+                values: ["applicants-api", "jobs-api", "sql-data-init", "sql-data-backup"]
       ports:
         - protocol: TCP
           port: 1433

@@ -1,8 +1,8 @@
-NAME                                               READY   STATUS    RESTARTS   AGE
-argocd-application-controller-0                    1/1     Running   0          63m
-argocd-applicationset-controller-bc84c94bc-hgrxv   1/1     Running   0          63m
-argocd-dex-server-598547cb8-d5g64                  1/1     Running   0          63m
-argocd-notifications-controller-5f59d79f8c-fvd4z   1/1     Running   0          63m
-argocd-redis-8b5b5b56d-rg4n9                       1/1     Running   0          63m
-argocd-repo-server-ff5578b69-s4c27                 1/1     Running   0          63m
-argocd-server-5f898b9cbc-nwtcp                     1/1     Running   0          63m
+NAME                                               READY   STATUS    RESTARTS      AGE
+argocd-application-controller-0                    1/1     Running   1 (88m ago)   4h32m
+argocd-applicationset-controller-bc84c94bc-hgrxv   1/1     Running   1 (88m ago)   4h32m
+argocd-dex-server-598547cb8-d5g64                  1/1     Running   1 (88m ago)   4h32m
+argocd-notifications-controller-5f59d79f8c-fvd4z   1/1     Running   1 (88m ago)   4h32m
+argocd-redis-8b5b5b56d-rg4n9                       1/1     Running   1 (88m ago)   4h32m
+argocd-repo-server-ff5578b69-s4c27                 1/1     Running   1 (88m ago)   4h32m
+argocd-server-5f898b9cbc-nwtcp                     1/1     Running   1 (88m ago)   4h32m

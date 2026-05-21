@@ -1,8 +1,9 @@
 NAME             TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)              AGE
-applicants-api   ClusterIP   10.96.243.193   <none>        80/TCP               3h27m
-identity-api     ClusterIP   10.96.211.168   <none>        80/TCP               3h27m
-jobs-api         ClusterIP   10.96.206.162   <none>        80/TCP               3h27m
-rabbitmq         ClusterIP   10.96.233.27    <none>        5672/TCP,15672/TCP   3h27m
-sql-data         ClusterIP   10.96.235.156   <none>        1433/TCP             3h27m
-user-data        ClusterIP   10.96.157.63    <none>        6379/TCP             3h27m
-webmvc           ClusterIP   10.96.157.222   <none>        80/TCP               3h27m
+applicants-api   ClusterIP   10.96.243.193   <none>        80/TCP               6h56m
+hello-api        ClusterIP   10.96.53.0      <none>        8080/TCP             31m
+identity-api     ClusterIP   10.96.211.168   <none>        80/TCP               6h56m
+jobs-api         ClusterIP   10.96.206.162   <none>        80/TCP               6h56m
+rabbitmq         ClusterIP   10.96.233.27    <none>        5672/TCP,15672/TCP   6h56m
+sql-data         ClusterIP   10.96.235.156   <none>        1433/TCP             6h56m
+user-data        ClusterIP   10.96.157.63    <none>        6379/TCP             6h56m
+webmvc           ClusterIP   10.96.157.222   <none>        80/TCP               6h56m

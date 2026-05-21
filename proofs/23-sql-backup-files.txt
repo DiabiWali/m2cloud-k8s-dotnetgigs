@@ -1,0 +1,4 @@
+-rw-r----- 1 root root 448K May 21 03:57 /var/opt/mssql/data/dotnetgigs-applicants-20260521-035254.bak
+-rw-r----- 1 root root 452K May 21 03:58 /var/opt/mssql/data/dotnetgigs-applicants-20260521-035808.bak
+-rw-r----- 1 root root 460K May 21 03:57 /var/opt/mssql/data/dotnetgigs-jobs-20260521-035254.bak
+-rw-r----- 1 root root 460K May 21 03:58 /var/opt/mssql/data/dotnetgigs-jobs-20260521-035808.bak

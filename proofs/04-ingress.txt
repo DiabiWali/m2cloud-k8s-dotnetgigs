@@ -1,2 +1,3 @@
-NAME     CLASS   HOSTS              ADDRESS     PORTS     AGE
-webmvc   nginx   dotnetgigs.local   localhost   80, 443   3h27m
+NAME        CLASS   HOSTS                        ADDRESS     PORTS     AGE
+hello-api   nginx   hello-api.dotnetgigs.local   localhost   80, 443   31m
+webmvc      nginx   dotnetgigs.local             localhost   80, 443   6h56m

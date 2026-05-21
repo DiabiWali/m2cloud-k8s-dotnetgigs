@@ -1,8 +1,8 @@
 NAME: dotnetgigs
-LAST DEPLOYED: Thu May 21 00:14:39 2026
+LAST DEPLOYED: Thu May 21 05:57:45 2026
 NAMESPACE: m2cloud
 STATUS: deployed
-REVISION: 4
+REVISION: 7
 TEST SUITE: None
 NOTES:
 DotNetGigs est déployé dans le namespace m2cloud.

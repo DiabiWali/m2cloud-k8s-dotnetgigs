@@ -87,6 +87,20 @@ persistence:
     accessModes:
       - ReadWriteOnce
 
+
+backup:
+  sql:
+    enabled: true
+    schedule: "0 2 * * *"
+    targetDirectory: "/var/opt/mssql/data"
+    successfulJobsHistoryLimit: 3
+    failedJobsHistoryLimit: 3
+    databases:
+      - name: "dotnetgigs.applicants"
+        filePrefix: "dotnetgigs-applicants"
+      - name: "dotnetgigs.jobs"
+        filePrefix: "dotnetgigs-jobs"
+
 resources:
   webmvc:
     requests:
@@ -151,6 +165,16 @@ resources:
       cpu: "2"
       memory: 3Gi
       ephemeral-storage: 2Gi
+
+  sqlBackup:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+      ephemeral-storage: 128Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+      ephemeral-storage: 512Mi
 
 autoscaling:
   webmvc:

@@ -1,0 +1,110 @@
+Name:                          sql-data-backup
+Namespace:                     m2cloud
+Labels:                        app.kubernetes.io/component=database-backup
+                               app.kubernetes.io/managed-by=Helm
+                               app.kubernetes.io/name=sql-data-backup
+                               app.kubernetes.io/part-of=dotnetgigs
+                               helm.sh/chart=dotnetgigs-1.1.0
+                               owner=ynov
+                               project=m2cloud
+Annotations:                   meta.helm.sh/release-name: dotnetgigs
+                               meta.helm.sh/release-namespace: m2cloud
+Schedule:                      0 2 * * *
+Concurrency Policy:            Forbid
+Suspend:                       False
+Time Zone:                     <unset>
+Successful Job History Limit:  3
+Failed Job History Limit:      3
+Starting Deadline Seconds:     <unset>
+Selector:                      <unset>
+Parallelism:                   <unset>
+Completions:                   <unset>
+Pod Template:
+  Labels:  app.kubernetes.io/component=database-backup
+           app.kubernetes.io/managed-by=Helm
+           app.kubernetes.io/name=sql-data-backup
+           app.kubernetes.io/part-of=dotnetgigs
+           helm.sh/chart=dotnetgigs-1.1.0
+           owner=ynov
+           project=m2cloud
+  Containers:
+   sql-backup:
+    Image:      local/m2cloud/m2cloud-sql-data:1.0.0
+    Port:       <none>
+    Host Port:  <none>
+    Command:
+      /bin/bash
+      -lc
+    Args:
+      set -euo pipefail
+      
+      if [ -x /opt/mssql-tools18/bin/sqlcmd ]; then
+        SQLCMD="/opt/mssql-tools18/bin/sqlcmd"
+        SQLCMD_FLAGS="-C"
+      elif [ -x /opt/mssql-tools/bin/sqlcmd ]; then
+        SQLCMD="/opt/mssql-tools/bin/sqlcmd"
+        SQLCMD_FLAGS=""
+      else
+        echo "sqlcmd introuvable dans l'image SQL."
+        exit 1
+      fi
+      
+      TS="$(date +%Y%m%d-%H%M%S)"
+      
+      echo "[backup] Waiting for SQL Server..."
+      for i in {1..60}; do
+        if ${SQLCMD} ${SQLCMD_FLAGS} -S sql-data -U sa -P "${SA_PASSWORD}" -b -Q "SELECT 1" >/dev/null 2>&1; then
+          echo "[backup] SQL Server is ready."
+          break
+        fi
+      
+        if [ "$i" -eq 60 ]; then
+          echo "[backup] SQL Server not ready after timeout."
+          exit 1
+        fi
+      
+        sleep 5
+      done
+      
+      backup_db() {
+        DB_NAME="$1"
+        BACKUP_FILE="$2"
+      
+        echo "[backup] Backing up database ${DB_NAME} to ${BACKUP_FILE}"
+      
+        ${SQLCMD} ${SQLCMD_FLAGS} \
+          -S sql-data \
+          -U sa \
+          -P "${SA_PASSWORD}" \
+          -b \
+          -Q "BACKUP DATABASE [${DB_NAME}] TO DISK = N'${BACKUP_FILE}' WITH INIT, COMPRESSION, CHECKSUM, STATS = 10"
+      
+        echo "[backup] Backup completed for ${DB_NAME}"
+      }
+      backup_db "dotnetgigs.applicants" "${BACKUP_DIR}/dotnetgigs-applicants-${TS}.bak"
+      backup_db "dotnetgigs.jobs" "${BACKUP_DIR}/dotnetgigs-jobs-${TS}.bak"
+      
+      echo "[backup] SQL backup job completed successfully."
+      
+    Limits:
+      cpu:                500m
+      ephemeral-storage:  512Mi
+      memory:             512Mi
+    Requests:
+      cpu:                100m
+      ephemeral-storage:  128Mi
+      memory:             256Mi
+    Environment:
+      SA_PASSWORD:   <set to the key 'MSSQL_SA_PASSWORD' in secret 'dotnetgigs-secrets'>  Optional: false
+      BACKUP_DIR:    /var/opt/mssql/data
+    Mounts:          <none>
+  Volumes:           <none>
+  Node-Selectors:    <none>
+  Tolerations:       <none>
+Last Schedule Time:  <unset>
+Active Jobs:         <none>
+Events:
+  Type     Reason         Age                    From                Message
+  ----     ------         ----                   ----                -------
+  Warning  UnexpectedJob  6m48s (x3 over 6m50s)  cronjob-controller  Saw a job that the controller did not create or forgot: sql-data-backup-manual-20260521055253
+  Warning  UnexpectedJob  91s (x5 over 96s)      cronjob-controller  Saw a job that the controller did not create or forgot: sql-data-backup-manual-20260521055807

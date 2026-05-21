@@ -1,0 +1,2 @@
+NAME           STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE     VOLUMEMODE
+sql-data-pvc   Bound    pvc-db181709-cb33-4efa-858a-cd98a1ac6230   5Gi        RWO            standard       <unset>                 6h56m   Filesystem

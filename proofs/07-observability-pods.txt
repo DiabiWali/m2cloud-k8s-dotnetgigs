@@ -1,13 +1,13 @@
-NAME                                                        READY   STATUS    RESTARTS   AGE
-alertmanager-kube-prometheus-stack-alertmanager-0           2/2     Running   0          4h22m
-elasticsearch-master-0                                      1/1     Running   0          4h21m
-fluent-bit-lmr27                                            1/1     Running   0          77m
-fluent-bit-rx995                                            1/1     Running   0          77m
-kibana-57489df6b8-mp8vj                                     1/1     Running   0          91m
-kube-prometheus-stack-grafana-6645bb7649-gnnb6              3/3     Running   0          4h22m
-kube-prometheus-stack-kube-state-metrics-58474dc949-pb5hs   1/1     Running   0          4h22m
-kube-prometheus-stack-operator-679898fc48-4gc6r             1/1     Running   0          4h22m
-kube-prometheus-stack-prometheus-node-exporter-5wpds        1/1     Running   0          4h22m
-kube-prometheus-stack-prometheus-node-exporter-8vgcf        1/1     Running   0          4h22m
-kube-prometheus-stack-prometheus-node-exporter-tcf9g        1/1     Running   0          4h22m
-prometheus-kube-prometheus-stack-prometheus-0               2/2     Running   0          4h22m
+NAME                                                        READY   STATUS    RESTARTS      AGE
+alertmanager-kube-prometheus-stack-alertmanager-0           2/2     Running   2 (88m ago)   7h51m
+elasticsearch-master-0                                      0/1     Running   1 (88m ago)   7h50m
+fluent-bit-lmr27                                            1/1     Running   2 (87m ago)   4h46m
+fluent-bit-rx995                                            1/1     Running   2 (87m ago)   4h46m
+kibana-57489df6b8-mp8vj                                     1/1     Running   1 (88m ago)   5h
+kube-prometheus-stack-grafana-6645bb7649-gnnb6              3/3     Running   3 (88m ago)   7h51m
+kube-prometheus-stack-kube-state-metrics-58474dc949-pb5hs   1/1     Running   1 (88m ago)   7h51m
+kube-prometheus-stack-operator-679898fc48-4gc6r             1/1     Running   2 (88m ago)   7h51m
+kube-prometheus-stack-prometheus-node-exporter-5wpds        1/1     Running   1 (88m ago)   7h51m
+kube-prometheus-stack-prometheus-node-exporter-8vgcf        1/1     Running   1 (88m ago)   7h51m
+kube-prometheus-stack-prometheus-node-exporter-tcf9g        1/1     Running   1 (88m ago)   7h51m
+prometheus-kube-prometheus-stack-prometheus-0               2/2     Running   2 (88m ago)   7h51m

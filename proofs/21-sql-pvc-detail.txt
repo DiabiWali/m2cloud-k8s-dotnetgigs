@@ -1,0 +1,24 @@
+Name:          sql-data-pvc
+Namespace:     m2cloud
+StorageClass:  standard
+Status:        Bound
+Volume:        pvc-db181709-cb33-4efa-858a-cd98a1ac6230
+Labels:        app.kubernetes.io/managed-by=Helm
+               app.kubernetes.io/part-of=dotnetgigs
+               helm.sh/chart=dotnetgigs-1.1.0
+               owner=ynov
+               project=m2cloud
+Annotations:   argocd.argoproj.io/tracking-id: dotnetgigs:/PersistentVolumeClaim:m2cloud/sql-data-pvc
+               meta.helm.sh/release-name: dotnetgigs
+               meta.helm.sh/release-namespace: m2cloud
+               pv.kubernetes.io/bind-completed: yes
+               pv.kubernetes.io/bound-by-controller: yes
+               volume.beta.kubernetes.io/storage-provisioner: rancher.io/local-path
+               volume.kubernetes.io/selected-node: m2cloud-worker2
+               volume.kubernetes.io/storage-provisioner: rancher.io/local-path
+Finalizers:    [kubernetes.io/pvc-protection]
+Capacity:      5Gi
+Access Modes:  RWO
+VolumeMode:    Filesystem
+Used By:       sql-data-0
+Events:        <none>
