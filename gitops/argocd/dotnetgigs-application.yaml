@@ -8,7 +8,7 @@ spec:
 
   source:
     repoURL: https://github.com/DiabiWali/m2cloud-k8s-dotnetgigs.git
-    targetRevision: main
+    targetRevision: feat/developer-portal-backstage
     path: helm/dotnetgigs
     helm:
       valueFiles:
@@ -24,6 +24,14 @@ spec:
     server: https://kubernetes.default.svc
     namespace: m2cloud
 
+
+  ignoreDifferences:
+    - group: apps
+      kind: Deployment
+      jqPathExpressions:
+        - .spec.replicas
+
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
+      - RespectIgnoreDifferences=true
