@@ -37,7 +37,7 @@
         
 <div class="row">
     <div class="col-md-8">
-        <h1>New Jobs (60)</h1>
+        <h1>New Jobs (80)</h1>
         <hr class="no-margin" />
     </div>
 </div>

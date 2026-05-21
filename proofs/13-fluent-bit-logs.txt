@@ -1,80 +1,80 @@
-[2026/05/21 03:59:20.425] [error] [engine] chunk '1-1779335949.425973797.flb' cannot be retried: task_id=26, input=tail.0 > output=es.0
-[2026/05/21 03:59:21.425] [error] [engine] chunk '1-1779335939.355016305.flb' cannot be retried: task_id=8, input=tail.0 > output=es.0
-[2026/05/21 03:59:21.923] [error] [upstream] connection #121 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:21.923] [error] [engine] chunk '1-1779335931.803555443.flb' cannot be retried: task_id=23, input=tail.0 > output=es.0
-[2026/05/21 03:59:22.426] [error] [engine] chunk '1-1779335944.356830896.flb' cannot be retried: task_id=11, input=tail.0 > output=es.0
-[2026/05/21 03:59:23.423] [error] [upstream] connection #50 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:23.423] [error] [upstream] connection #74 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:23.423] [error] [upstream] connection #128 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:23.424] [ warn] [engine] failed to flush chunk '1-1779335951.424078907.flb', retry in 10 seconds: task_id=20, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:23.424] [ warn] [engine] failed to flush chunk '1-1779335952.337356236.flb', retry in 7 seconds: task_id=29, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:23.424] [error] [engine] chunk '1-1779335932.357171265.flb' cannot be retried: task_id=28, input=tail.0 > output=es.0
-[2026/05/21 03:59:23.425] [error] [engine] chunk '1-1779335945.355008504.flb' cannot be retried: task_id=10, input=tail.0 > output=es.0
-[2026/05/21 03:59:24.425] [error] [engine] chunk '1-1779335942.356091381.flb' cannot be retried: task_id=9, input=tail.0 > output=es.0
-[2026/05/21 03:59:24.923] [error] [upstream] connection #114 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:24.923] [error] [upstream] connection #116 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:24.923] [error] [upstream] connection #119 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:24.923] [error] [engine] chunk '1-1779335933.355028657.flb' cannot be retried: task_id=7, input=tail.0 > output=es.0
-[2026/05/21 03:59:24.923] [error] [engine] chunk '1-1779335943.357020431.flb' cannot be retried: task_id=2, input=tail.0 > output=es.0
-[2026/05/21 03:59:24.923] [error] [engine] chunk '1-1779335935.356872674.flb' cannot be retried: task_id=14, input=tail.0 > output=es.0
-[2026/05/21 03:59:25.425] [ warn] [engine] failed to flush chunk '1-1779335964.425444620.flb', retry in 11 seconds: task_id=2, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:26.423] [error] [upstream] connection #122 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:26.423] [error] [upstream] connection #49 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:26.423] [error] [upstream] connection #130 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:26.424] [error] [engine] chunk '1-1779335948.355742727.flb' cannot be retried: task_id=18, input=tail.0 > output=es.0
-[2026/05/21 03:59:26.424] [ warn] [engine] failed to flush chunk '1-1779335956.222834955.flb', retry in 6 seconds: task_id=15, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:26.425] [error] [engine] chunk '1-1779335946.356909623.flb' cannot be retried: task_id=1, input=tail.0 > output=es.0
-[2026/05/21 03:59:26.425] [error] [engine] chunk '1-1779335954.424764609.flb' cannot be retried: task_id=0, input=tail.0 > output=es.0
-[2026/05/21 03:59:27.425] [error] [engine] chunk '1-1779335949.330733464.flb' cannot be retried: task_id=21, input=tail.0 > output=es.0
-[2026/05/21 03:59:27.923] [error] [upstream] connection #71 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:27.923] [error] [engine] chunk '1-1779335937.356801123.flb' cannot be retried: task_id=6, input=tail.0 > output=es.0
-[2026/05/21 03:59:28.425] [ warn] [engine] failed to flush chunk '1-1779335968.350388510.flb', retry in 8 seconds: task_id=6, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:29.423] [error] [upstream] connection #112 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:29.423] [error] [upstream] connection #75 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:29.423] [error] [upstream] connection #113 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:29.423] [error] [engine] chunk '1-1779335936.356150309.flb' cannot be retried: task_id=16, input=tail.0 > output=es.0
-[2026/05/21 03:59:29.424] [ warn] [engine] failed to flush chunk '1-1779335958.426582346.flb', retry in 7 seconds: task_id=5, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:29.424] [ warn] [engine] failed to flush chunk '1-1779335957.423727154.flb', retry in 11 seconds: task_id=3, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:29.425] [error] [engine] chunk '1-1779335947.356443137.flb' cannot be retried: task_id=12, input=tail.0 > output=es.0
-[2026/05/21 03:59:30.425] [ warn] [engine] failed to flush chunk '1-1779335969.423771624.flb', retry in 9 seconds: task_id=12, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:30.923] [error] [upstream] connection #110 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:30.923] [ warn] [engine] failed to flush chunk '1-1779335959.425518272.flb', retry in 6 seconds: task_id=17, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:31.425] [ warn] [engine] failed to flush chunk '1-1779335970.425344555.flb', retry in 10 seconds: task_id=14, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:32.423] [error] [upstream] connection #115 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:32.423] [error] [upstream] connection #70 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:32.423] [error] [upstream] connection #46 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:32.423] [error] [upstream] connection #111 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:32.423] [error] [upstream] connection #117 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:32.424] [error] [engine] chunk '1-1779335941.357140199.flb' cannot be retried: task_id=24, input=tail.0 > output=es.0
-[2026/05/21 03:59:32.424] [ warn] [engine] failed to flush chunk '1-1779335960.424682041.flb', retry in 10 seconds: task_id=19, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:32.424] [ warn] [engine] failed to flush chunk '1-1779335961.425969500.flb', retry in 7 seconds: task_id=8, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:32.424] [error] [engine] chunk '1-1779335952.425651199.flb' cannot be retried: task_id=13, input=tail.0 > output=es.0
-[2026/05/21 03:59:32.424] [ warn] [engine] failed to flush chunk '1-1779335962.336573374.flb', retry in 6 seconds: task_id=23, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:32.426] [ warn] [engine] failed to flush chunk '1-1779335971.426218875.flb', retry in 10 seconds: task_id=16, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:33.425] [error] [engine] chunk '1-1779335951.424078907.flb' cannot be retried: task_id=20, input=tail.0 > output=es.0
-[2026/05/21 03:59:33.923] [error] [upstream] connection #50 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:33.923] [error] [upstream] connection #118 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:33.923] [error] [upstream] connection #74 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:33.923] [ warn] [engine] failed to flush chunk '1-1779335962.815954079.flb', retry in 6 seconds: task_id=25, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:33.923] [error] [engine] chunk '1-1779335955.426015428.flb' cannot be retried: task_id=4, input=tail.0 > output=es.0
-[2026/05/21 03:59:33.923] [ warn] [engine] failed to flush chunk '1-1779335962.426720868.flb', retry in 6 seconds: task_id=11, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:34.425] [ warn] [engine] failed to flush chunk '1-1779335973.425594092.flb', retry in 7 seconds: task_id=4, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:35.423] [error] [upstream] connection #121 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:35.423] [error] [upstream] connection #120 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:35.423] [error] [engine] chunk '1-1779335953.425543818.flb' cannot be retried: task_id=22, input=tail.0 > output=es.0
-[2026/05/21 03:59:35.424] [ warn] [engine] failed to flush chunk '1-1779335963.423803949.flb', retry in 10 seconds: task_id=10, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:35.425] [ warn] [engine] failed to flush chunk '1-1779335974.425888127.flb', retry in 6 seconds: task_id=20, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:36.426] [error] [engine] chunk '1-1779335964.425444620.flb' cannot be retried: task_id=2, input=tail.0 > output=es.0
-[2026/05/21 03:59:36.923] [error] [upstream] connection #49 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:36.923] [ warn] [engine] failed to flush chunk '1-1779335965.425418393.flb', retry in 11 seconds: task_id=7, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:37.425] [ warn] [engine] failed to flush chunk '1-1779335976.426622051.flb', retry in 9 seconds: task_id=2, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:38.423] [error] [upstream] connection #71 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:38.423] [error] [upstream] connection #122 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:38.423] [error] [upstream] connection #114 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:38.424] [error] [engine] chunk '1-1779335956.425821301.flb' cannot be retried: task_id=30, input=tail.0 > output=es.0
-[2026/05/21 03:59:38.424] [ warn] [engine] failed to flush chunk '1-1779335966.424852056.flb', retry in 8 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:38.424] [ warn] [engine] failed to flush chunk '1-1779335967.425443155.flb', retry in 9 seconds: task_id=1, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:38.425] [ warn] [engine] failed to flush chunk '1-1779335977.425443337.flb', retry in 9 seconds: task_id=22, input=tail.0 > output=es.0 (out_id=0)
-[2026/05/21 03:59:39.496] [error] [engine] chunk '1-1779335962.426720868.flb' cannot be retried: task_id=11, input=tail.0 > output=es.0
-[2026/05/21 03:59:39.993] [error] [upstream] connection #75 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
-[2026/05/21 03:59:39.993] [ warn] [engine] failed to flush chunk '1-1779335968.425530891.flb', retry in 8 seconds: task_id=9, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:11:37.272] [ warn] [engine] failed to flush chunk '1-1779336686.273847606.flb', retry in 7 seconds: task_id=26, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:11:37.272] [ warn] [engine] failed to flush chunk '1-1779336686.364962013.flb', retry in 9 seconds: task_id=27, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:11:37.274] [error] [engine] chunk '1-1779336689.274427811.flb' cannot be retried: task_id=6, input=tail.0 > output=es.0
+[2026/05/21 04:11:38.273] [ warn] [engine] failed to flush chunk '1-1779336697.272273379.flb', retry in 11 seconds: task_id=1, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:11:38.771] [error] [upstream] connection #50 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:38.771] [ warn] [engine] failed to flush chunk '1-1779336687.274686089.flb', retry in 9 seconds: task_id=29, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:11:39.273] [ warn] [engine] failed to flush chunk '1-1779336698.273942916.flb', retry in 10 seconds: task_id=6, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:11:40.271] [error] [upstream] connection #71 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:40.271] [error] [upstream] connection #118 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:40.271] [error] [upstream] connection #117 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:40.271] [error] [upstream] connection #119 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:40.271] [error] [upstream] connection #112 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:40.271] [error] [upstream] connection #46 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:40.273] [error] [engine] chunk '1-1779336669.187587572.flb' cannot be retried: task_id=18, input=tail.0 > output=es.0
+[2026/05/21 04:11:40.273] [error] [engine] chunk '1-1779336681.273935758.flb' cannot be retried: task_id=8, input=tail.0 > output=es.0
+[2026/05/21 04:11:40.273] [ warn] [engine] failed to flush chunk '1-1779336688.273197236.flb', retry in 11 seconds: task_id=0, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:11:40.273] [ warn] [engine] failed to flush chunk '1-1779336690.209876340.flb', retry in 9 seconds: task_id=7, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:11:40.273] [error] [engine] chunk '1-1779336670.186550296.flb' cannot be retried: task_id=10, input=tail.0 > output=es.0
+[2026/05/21 04:11:40.273] [error] [engine] chunk '1-1779336671.93753509.flb' cannot be retried: task_id=14, input=tail.0 > output=es.0
+[2026/05/21 04:11:40.273] [error] [engine] chunk '1-1779336678.274053086.flb' cannot be retried: task_id=23, input=tail.0 > output=es.0
+[2026/05/21 04:11:41.362] [error] [engine] chunk '1-1779336690.274389364.flb' cannot be retried: task_id=12, input=tail.0 > output=es.0
+[2026/05/21 04:11:41.860] [error] [upstream] connection #122 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:41.860] [error] [engine] chunk '1-1779336674.275386118.flb' cannot be retried: task_id=17, input=tail.0 > output=es.0
+[2026/05/21 04:11:42.362] [error] [engine] chunk '1-1779336692.274415920.flb' cannot be retried: task_id=31, input=tail.0 > output=es.0
+[2026/05/21 04:11:43.360] [error] [upstream] connection #121 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:43.360] [error] [upstream] connection #129 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:43.361] [error] [engine] chunk '1-1779336686.512517103.flb' cannot be retried: task_id=28, input=tail.0 > output=es.0
+[2026/05/21 04:11:43.361] [error] [engine] chunk '1-1779336671.274194017.flb' cannot be retried: task_id=4, input=tail.0 > output=es.0
+[2026/05/21 04:11:43.362] [ warn] [engine] failed to flush chunk '1-1779336702.362647070.flb', retry in 8 seconds: task_id=14, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:11:44.362] [error] [engine] chunk '1-1779336686.273847606.flb' cannot be retried: task_id=26, input=tail.0 > output=es.0
+[2026/05/21 04:11:44.860] [error] [upstream] connection #120 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:44.860] [error] [upstream] connection #110 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:44.860] [error] [engine] chunk '1-1779336684.671561551.flb' cannot be retried: task_id=24, input=tail.0 > output=es.0
+[2026/05/21 04:11:44.860] [error] [upstream] connection #123 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:44.860] [error] [engine] chunk '1-1779336683.274235093.flb' cannot be retried: task_id=5, input=tail.0 > output=es.0
+[2026/05/21 04:11:44.860] [ warn] [engine] failed to flush chunk '1-1779336693.274162861.flb', retry in 10 seconds: task_id=32, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:11:45.363] [ warn] [engine] failed to flush chunk '1-1779336704.362850860.flb', retry in 6 seconds: task_id=5, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:11:46.360] [error] [upstream] connection #125 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:46.360] [error] [upstream] connection #116 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:46.360] [error] [upstream] connection #49 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:46.360] [error] [upstream] connection #111 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:46.362] [ warn] [engine] failed to flush chunk '1-1779336694.273022368.flb', retry in 6 seconds: task_id=11, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:11:46.362] [error] [engine] chunk '1-1779336685.272214947.flb' cannot be retried: task_id=25, input=tail.0 > output=es.0
+[2026/05/21 04:11:46.362] [error] [engine] chunk '1-1779336675.274058536.flb' cannot be retried: task_id=15, input=tail.0 > output=es.0
+[2026/05/21 04:11:46.362] [error] [engine] chunk '1-1779336678.85393555.flb' cannot be retried: task_id=22, input=tail.0 > output=es.0
+[2026/05/21 04:11:46.362] [error] [engine] chunk '1-1779336686.364962013.flb' cannot be retried: task_id=27, input=tail.0 > output=es.0
+[2026/05/21 04:11:47.362] [error] [engine] chunk '1-1779336687.274686089.flb' cannot be retried: task_id=29, input=tail.0 > output=es.0
+[2026/05/21 04:11:47.860] [error] [upstream] connection #70 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:47.860] [error] [upstream] connection #113 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:47.860] [error] [engine] chunk '1-1779336679.272633752.flb' cannot be retried: task_id=2, input=tail.0 > output=es.0
+[2026/05/21 04:11:47.860] [ warn] [engine] failed to flush chunk '1-1779336696.273825763.flb', retry in 9 seconds: task_id=16, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:11:48.362] [ warn] [engine] failed to flush chunk '1-1779336708.174483848.flb', retry in 8 seconds: task_id=22, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:11:49.360] [error] [upstream] connection #130 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:49.361] [ warn] [engine] failed to flush chunk '1-1779336698.889053674.flb', retry in 7 seconds: task_id=20, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:11:49.382] [error] [net] TCP connection failed: elasticsearch-master.observability.svc.cluster.local:9200 (Connection refused)
+[2026/05/21 04:11:49.383] [ warn] [engine] failed to flush chunk '1-1779336707.362669145.flb', retry in 9 seconds: task_id=2, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:11:50.372] [error] [net] TCP connection failed: elasticsearch-master.observability.svc.cluster.local:9200 (Connection refused)
+[2026/05/21 04:11:50.372] [error] [engine] chunk '1-1779336690.209876340.flb' cannot be retried: task_id=7, input=tail.0 > output=es.0
+[2026/05/21 04:11:50.860] [error] [upstream] connection #71 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:50.860] [error] [upstream] connection #46 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:50.860] [error] [engine] chunk '1-1779336694.184889994.flb' cannot be retried: task_id=33, input=tail.0 > output=es.0
+[2026/05/21 04:11:50.860] [ warn] [engine] failed to flush chunk '1-1779336699.273962151.flb', retry in 8 seconds: task_id=21, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:11:51.460] [error] [net] TCP connection failed: elasticsearch-master.observability.svc.cluster.local:9200 (Connection refused)
+[2026/05/21 04:11:51.460] [error] [engine] chunk '1-1779336695.273984538.flb' cannot be retried: task_id=9, input=tail.0 > output=es.0
+[2026/05/21 04:11:52.360] [error] [upstream] connection #75 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:52.360] [error] [upstream] connection #112 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:52.360] [error] [upstream] connection #114 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:52.360] [error] [upstream] connection #74 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:52.360] [error] [upstream] connection #115 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:52.361] [ warn] [engine] failed to flush chunk '1-1779336700.273203488.flb', retry in 11 seconds: task_id=8, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:11:52.361] [error] [engine] chunk '1-1779336691.272169606.flb' cannot be retried: task_id=30, input=tail.0 > output=es.0
+[2026/05/21 04:11:52.361] [error] [engine] chunk '1-1779336684.274509456.flb' cannot be retried: task_id=19, input=tail.0 > output=es.0
+[2026/05/21 04:11:52.361] [ warn] [engine] failed to flush chunk '1-1779336701.179842715.flb', retry in 11 seconds: task_id=10, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:11:52.361] [ warn] [engine] failed to flush chunk '1-1779336701.362732892.flb', retry in 8 seconds: task_id=12, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:11:52.484] [error] [net] TCP connection failed: elasticsearch-master.observability.svc.cluster.local:9200 (Connection refused)
+[2026/05/21 04:11:52.484] [ warn] [engine] failed to flush chunk '1-1779336706.362284254.flb', retry in 7 seconds: task_id=15, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:11:53.444] [error] [net] TCP connection failed: elasticsearch-master.observability.svc.cluster.local:9200 (Connection refused)
+[2026/05/21 04:11:53.444] [ warn] [engine] failed to flush chunk '1-1779336708.363139497.flb', retry in 9 seconds: task_id=23, input=tail.0 > output=es.0 (out_id=0)
+[2026/05/21 04:11:53.860] [error] [upstream] connection #117 to tcp://10.96.12.115:9200 timed out after 10 seconds (connection timeout)
+[2026/05/21 04:11:53.860] [error] [engine] chunk '1-1779336682.272904270.flb' cannot be retried: task_id=3, input=tail.0 > output=es.0

@@ -6,32 +6,40 @@ API Version:  argoproj.io/v1alpha1
 Kind:         Application
 Metadata:
   Creation Timestamp:  2026-05-20T23:37:30Z
-  Generation:          140
-  Resource Version:    50721
+  Generation:          171
+  Resource Version:    52160
   UID:                 f29c6192-28d1-44ad-bb26-94b95dec0356
 Spec:
   Destination:
     Namespace:  m2cloud
     Server:     https://kubernetes.default.svc
-  Project:      default
+  Ignore Differences:
+    Group:  apps
+    Jq Path Expressions:
+      .spec.replicas
+    Kind:   Deployment
+  Project:  default
   Source:
     Helm:
       Parameters:
         Name:   global.imageRegistry
         Value:  local/m2cloud
+        Name:   global.imageTag
+        Value:  1.0.0
       Value Files:
         values.yaml
         ../../environments/dev/values-dev.yaml
     Path:             helm/dotnetgigs
     Repo URL:         https://github.com/DiabiWali/m2cloud-k8s-dotnetgigs.git
-    Target Revision:  main
+    Target Revision:  feat/developer-portal-backstage
   Sync Policy:
     Sync Options:
       CreateNamespace=true
+      RespectIgnoreDifferences=true
 Status:
   Controller Namespace:  argocd
   Health:
-    Last Transition Time:  2026-05-21T03:58:23Z
+    Last Transition Time:  2026-05-21T04:09:56Z
     Status:                Healthy
   History:
     Deploy Started At:  2026-05-20T23:39:50Z
@@ -51,8 +59,44 @@ Status:
       Path:             helm/dotnetgigs
       Repo URL:         https://github.com/DiabiWali/m2cloud-k8s-dotnetgigs.git
       Target Revision:  main
+    Deploy Started At:  2026-05-21T04:07:21Z
+    Deployed At:        2026-05-21T04:07:29Z
+    Id:                 1
+    Initiated By:
+      Username:  admin
+    Revision:    1affb027e63997d9124397a7e20ecc5b9b04e7e2
+    Source:
+      Helm:
+        Parameters:
+          Name:   global.imageRegistry
+          Value:  local/m2cloud
+        Value Files:
+          values.yaml
+          ../../environments/dev/values-dev.yaml
+      Path:             helm/dotnetgigs
+      Repo URL:         https://github.com/DiabiWali/m2cloud-k8s-dotnetgigs.git
+      Target Revision:  feat/developer-portal-backstage
+    Deploy Started At:  2026-05-21T04:09:26Z
+    Deployed At:        2026-05-21T04:09:34Z
+    Id:                 2
+    Initiated By:
+      Username:  admin
+    Revision:    db283eaee014e27a2cd2fbece1eb91e689883036
+    Source:
+      Helm:
+        Parameters:
+          Name:   global.imageRegistry
+          Value:  local/m2cloud
+          Name:   global.imageTag
+          Value:  1.0.0
+        Value Files:
+          values.yaml
+          ../../environments/dev/values-dev.yaml
+      Path:             helm/dotnetgigs
+      Repo URL:         https://github.com/DiabiWali/m2cloud-k8s-dotnetgigs.git
+      Target Revision:  feat/developer-portal-backstage
   Operation State:
-    Finished At:  2026-05-20T23:40:00Z
+    Finished At:  2026-05-21T04:09:34Z
     Message:      successfully synced (no more tasks)
     Operation:
       Initiated By:
@@ -79,13 +123,13 @@ Status:
         Sync Strategy:
           Hook:
     Phase:       Succeeded
-    Started At:  2026-05-20T23:39:50Z
+    Started At:  2026-05-21T04:09:26Z
     Sync Result:
       Resources:
         Group:       
         Hook Phase:  Succeeded
         Kind:        Namespace
-        Message:     namespace/m2cloud configured
+        Message:     namespace/m2cloud unchanged
         Name:        m2cloud
         Namespace:   m2cloud
         Status:      Synced
@@ -94,7 +138,7 @@ Status:
         Group:       networking.k8s.io
         Hook Phase:  Succeeded
         Kind:        NetworkPolicy
-        Message:     networkpolicy.networking.k8s.io/allow-services-to-rabbitmq configured. Warning: resource networkpolicies/allow-services-to-rabbitmq is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
+        Message:     networkpolicy.networking.k8s.io/allow-services-to-rabbitmq unchanged
         Name:        allow-services-to-rabbitmq
         Namespace:   m2cloud
         Status:      Synced
@@ -103,7 +147,7 @@ Status:
         Group:       networking.k8s.io
         Hook Phase:  Succeeded
         Kind:        NetworkPolicy
-        Message:     networkpolicy.networking.k8s.io/allow-ingress-to-webmvc configured. Warning: resource networkpolicies/allow-ingress-to-webmvc is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
+        Message:     networkpolicy.networking.k8s.io/allow-ingress-to-webmvc unchanged
         Name:        allow-ingress-to-webmvc
         Namespace:   m2cloud
         Status:      Synced
@@ -112,25 +156,7 @@ Status:
         Group:       networking.k8s.io
         Hook Phase:  Succeeded
         Kind:        NetworkPolicy
-        Message:     networkpolicy.networking.k8s.io/allow-webmvc-to-apis configured. Warning: resource networkpolicies/allow-webmvc-to-apis is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
-        Name:        allow-webmvc-to-apis
-        Namespace:   m2cloud
-        Status:      Synced
-        Sync Phase:  Sync
-        Version:     v1
-        Group:       networking.k8s.io
-        Hook Phase:  Succeeded
-        Kind:        NetworkPolicy
-        Message:     networkpolicy.networking.k8s.io/default-deny-ingress configured. Warning: resource networkpolicies/default-deny-ingress is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
-        Name:        default-deny-ingress
-        Namespace:   m2cloud
-        Status:      Synced
-        Sync Phase:  Sync
-        Version:     v1
-        Group:       networking.k8s.io
-        Hook Phase:  Succeeded
-        Kind:        NetworkPolicy
-        Message:     networkpolicy.networking.k8s.io/allow-apis-to-sql-data configured. Warning: resource networkpolicies/allow-apis-to-sql-data is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
+        Message:     networkpolicy.networking.k8s.io/allow-apis-to-sql-data unchanged
         Name:        allow-apis-to-sql-data
         Namespace:   m2cloud
         Status:      Synced
@@ -139,17 +165,26 @@ Status:
         Group:       networking.k8s.io
         Hook Phase:  Succeeded
         Kind:        NetworkPolicy
-        Message:     networkpolicy.networking.k8s.io/allow-identity-to-redis configured. Warning: resource networkpolicies/allow-identity-to-redis is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
+        Message:     networkpolicy.networking.k8s.io/allow-identity-to-redis unchanged
         Name:        allow-identity-to-redis
         Namespace:   m2cloud
         Status:      Synced
         Sync Phase:  Sync
         Version:     v1
-        Group:       policy
+        Group:       networking.k8s.io
         Hook Phase:  Succeeded
-        Kind:        PodDisruptionBudget
-        Message:     PodDisruptionBudget has SufficientPods
-        Name:        jobs-api
+        Kind:        NetworkPolicy
+        Message:     networkpolicy.networking.k8s.io/allow-webmvc-to-apis unchanged
+        Name:        allow-webmvc-to-apis
+        Namespace:   m2cloud
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       networking.k8s.io
+        Hook Phase:  Succeeded
+        Kind:        NetworkPolicy
+        Message:     networkpolicy.networking.k8s.io/default-deny-ingress unchanged
+        Name:        default-deny-ingress
         Namespace:   m2cloud
         Status:      Synced
         Sync Phase:  Sync
@@ -167,7 +202,7 @@ Status:
         Hook Phase:  Succeeded
         Kind:        PodDisruptionBudget
         Message:     PodDisruptionBudget has SufficientPods
-        Name:        webmvc
+        Name:        applicants-api
         Namespace:   m2cloud
         Status:      Synced
         Sync Phase:  Sync
@@ -176,7 +211,16 @@ Status:
         Hook Phase:  Succeeded
         Kind:        PodDisruptionBudget
         Message:     PodDisruptionBudget has SufficientPods
-        Name:        applicants-api
+        Name:        jobs-api
+        Namespace:   m2cloud
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       policy
+        Hook Phase:  Succeeded
+        Kind:        PodDisruptionBudget
+        Message:     PodDisruptionBudget has SufficientPods
+        Name:        webmvc
         Namespace:   m2cloud
         Status:      Synced
         Sync Phase:  Sync
@@ -184,7 +228,7 @@ Status:
         Group:       
         Hook Phase:  Succeeded
         Kind:        ServiceAccount
-        Message:     serviceaccount/applicants-api-sa configured. Warning: resource serviceaccounts/applicants-api-sa is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
+        Message:     serviceaccount/applicants-api-sa unchanged
         Name:        applicants-api-sa
         Namespace:   m2cloud
         Status:      Synced
@@ -193,7 +237,7 @@ Status:
         Group:       
         Hook Phase:  Succeeded
         Kind:        Secret
-        Message:     secret/dotnetgigs-secrets configured. Warning: resource secrets/dotnetgigs-secrets is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
+        Message:     secret/dotnetgigs-secrets configured
         Name:        dotnetgigs-secrets
         Namespace:   m2cloud
         Status:      Synced
@@ -202,7 +246,16 @@ Status:
         Group:       
         Hook Phase:  Succeeded
         Kind:        ConfigMap
-        Message:     configmap/dotnetgigs-config configured. Warning: resource configmaps/dotnetgigs-config is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
+        Message:     configmap/rabbitmq-config unchanged
+        Name:        rabbitmq-config
+        Namespace:   m2cloud
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Succeeded
+        Kind:        ConfigMap
+        Message:     configmap/dotnetgigs-config unchanged
         Name:        dotnetgigs-config
         Namespace:   m2cloud
         Status:      Synced
@@ -211,7 +264,7 @@ Status:
         Group:       
         Hook Phase:  Succeeded
         Kind:        PersistentVolumeClaim
-        Message:     persistentvolumeclaim/sql-data-pvc configured. Warning: resource persistentvolumeclaims/sql-data-pvc is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
+        Message:     persistentvolumeclaim/sql-data-pvc unchanged
         Name:        sql-data-pvc
         Namespace:   m2cloud
         Status:      Synced
@@ -220,7 +273,7 @@ Status:
         Group:       rbac.authorization.k8s.io
         Hook Phase:  Succeeded
         Kind:        Role
-        Message:     role.rbac.authorization.k8s.io/applicants-api-read-config reconciled. reconciliation required update. role.rbac.authorization.k8s.io/applicants-api-read-config configured. Warning: resource roles/applicants-api-read-config is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
+        Message:     role.rbac.authorization.k8s.io/applicants-api-read-config reconciled. role.rbac.authorization.k8s.io/applicants-api-read-config unchanged
         Name:        applicants-api-read-config
         Namespace:   m2cloud
         Status:      Synced
@@ -229,7 +282,7 @@ Status:
         Group:       rbac.authorization.k8s.io
         Hook Phase:  Succeeded
         Kind:        RoleBinding
-        Message:     rolebinding.rbac.authorization.k8s.io/applicants-api-read-config reconciled. reconciliation required update. rolebinding.rbac.authorization.k8s.io/applicants-api-read-config configured. Warning: resource rolebindings/applicants-api-read-config is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
+        Message:     rolebinding.rbac.authorization.k8s.io/applicants-api-read-config reconciled. rolebinding.rbac.authorization.k8s.io/applicants-api-read-config unchanged
         Name:        applicants-api-read-config
         Namespace:   m2cloud
         Status:      Synced
@@ -238,25 +291,7 @@ Status:
         Group:       
         Hook Phase:  Succeeded
         Kind:        Service
-        Message:     service/user-data configured. Warning: resource services/user-data is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
-        Name:        user-data
-        Namespace:   m2cloud
-        Status:      Synced
-        Sync Phase:  Sync
-        Version:     v1
-        Group:       
-        Hook Phase:  Succeeded
-        Kind:        Service
-        Message:     service/jobs-api configured. Warning: resource services/jobs-api is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
-        Name:        jobs-api
-        Namespace:   m2cloud
-        Status:      Synced
-        Sync Phase:  Sync
-        Version:     v1
-        Group:       
-        Hook Phase:  Succeeded
-        Kind:        Service
-        Message:     service/sql-data configured. Warning: resource services/sql-data is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
+        Message:     service/sql-data unchanged
         Name:        sql-data
         Namespace:   m2cloud
         Status:      Synced
@@ -265,16 +300,7 @@ Status:
         Group:       
         Hook Phase:  Succeeded
         Kind:        Service
-        Message:     service/webmvc configured. Warning: resource services/webmvc is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
-        Name:        webmvc
-        Namespace:   m2cloud
-        Status:      Synced
-        Sync Phase:  Sync
-        Version:     v1
-        Group:       
-        Hook Phase:  Succeeded
-        Kind:        Service
-        Message:     service/identity-api configured. Warning: resource services/identity-api is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
+        Message:     service/identity-api unchanged
         Name:        identity-api
         Namespace:   m2cloud
         Status:      Synced
@@ -283,7 +309,34 @@ Status:
         Group:       
         Hook Phase:  Succeeded
         Kind:        Service
-        Message:     service/applicants-api configured. Warning: resource services/applicants-api is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
+        Message:     service/user-data unchanged
+        Name:        user-data
+        Namespace:   m2cloud
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Succeeded
+        Kind:        Service
+        Message:     service/jobs-api unchanged
+        Name:        jobs-api
+        Namespace:   m2cloud
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Succeeded
+        Kind:        Service
+        Message:     service/rabbitmq unchanged
+        Name:        rabbitmq
+        Namespace:   m2cloud
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Succeeded
+        Kind:        Service
+        Message:     service/applicants-api unchanged
         Name:        applicants-api
         Namespace:   m2cloud
         Status:      Synced
@@ -292,8 +345,8 @@ Status:
         Group:       
         Hook Phase:  Succeeded
         Kind:        Service
-        Message:     service/rabbitmq configured. Warning: resource services/rabbitmq is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
-        Name:        rabbitmq
+        Message:     service/webmvc unchanged
+        Name:        webmvc
         Namespace:   m2cloud
         Status:      Synced
         Sync Phase:  Sync
@@ -303,7 +356,7 @@ Status:
         Images:
           rabbitmq:3.13-management-alpine
         Kind:        Deployment
-        Message:     deployment.apps/rabbitmq configured. Warning: resource deployments/rabbitmq is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
+        Message:     deployment.apps/rabbitmq unchanged
         Name:        rabbitmq
         Namespace:   m2cloud
         Status:      Synced
@@ -312,10 +365,10 @@ Status:
         Group:       apps
         Hook Phase:  Succeeded
         Images:
-          local/m2cloud/m2cloud-webmvc:1.0.0
+          local/m2cloud/m2cloud-identity-api:1.0.0
         Kind:        Deployment
-        Message:     deployment.apps/webmvc configured. Warning: resource deployments/webmvc is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
-        Name:        webmvc
+        Message:     deployment.apps/identity-api unchanged
+        Name:        identity-api
         Namespace:   m2cloud
         Status:      Synced
         Sync Phase:  Sync
@@ -325,7 +378,7 @@ Status:
         Images:
           local/m2cloud/m2cloud-jobs-api:1.0.0
         Kind:        Deployment
-        Message:     deployment.apps/jobs-api configured. Warning: resource deployments/jobs-api is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
+        Message:     deployment.apps/jobs-api unchanged
         Name:        jobs-api
         Namespace:   m2cloud
         Status:      Synced
@@ -336,7 +389,7 @@ Status:
         Images:
           local/m2cloud/m2cloud-applicants-api:1.0.0
         Kind:        Deployment
-        Message:     deployment.apps/applicants-api configured. Warning: resource deployments/applicants-api is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
+        Message:     deployment.apps/applicants-api unchanged
         Name:        applicants-api
         Namespace:   m2cloud
         Status:      Synced
@@ -347,7 +400,7 @@ Status:
         Images:
           redis:7.4-alpine
         Kind:        Deployment
-        Message:     deployment.apps/user-data configured. Warning: resource deployments/user-data is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
+        Message:     deployment.apps/user-data unchanged
         Name:        user-data
         Namespace:   m2cloud
         Status:      Synced
@@ -356,10 +409,10 @@ Status:
         Group:       apps
         Hook Phase:  Succeeded
         Images:
-          local/m2cloud/m2cloud-identity-api:1.0.0
+          local/m2cloud/m2cloud-webmvc:1.0.0
         Kind:        Deployment
-        Message:     deployment.apps/identity-api configured. Warning: resource deployments/identity-api is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
-        Name:        identity-api
+        Message:     deployment.apps/webmvc configured
+        Name:        webmvc
         Namespace:   m2cloud
         Status:      Synced
         Sync Phase:  Sync
@@ -367,16 +420,7 @@ Status:
         Group:       autoscaling
         Hook Phase:  Succeeded
         Kind:        HorizontalPodAutoscaler
-        Message:     the HPA controller was able to get the target's current scale
-        Name:        webmvc
-        Namespace:   m2cloud
-        Status:      Synced
-        Sync Phase:  Sync
-        Version:     v2
-        Group:       autoscaling
-        Hook Phase:  Succeeded
-        Kind:        HorizontalPodAutoscaler
-        Message:     the HPA controller was able to get the target's current scale
+        Message:     recommended size matches current size
         Name:        jobs-api
         Namespace:   m2cloud
         Status:      Synced
@@ -385,7 +429,16 @@ Status:
         Group:       autoscaling
         Hook Phase:  Succeeded
         Kind:        HorizontalPodAutoscaler
-        Message:     the HPA controller was able to get the target's current scale
+        Message:     recent recommendations were higher than current one, applying the highest recent recommendation
+        Name:        webmvc
+        Namespace:   m2cloud
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v2
+        Group:       autoscaling
+        Hook Phase:  Succeeded
+        Kind:        HorizontalPodAutoscaler
+        Message:     recommended size matches current size
         Name:        applicants-api
         Namespace:   m2cloud
         Status:      Synced
@@ -402,10 +455,21 @@ Status:
         Status:      Synced
         Sync Phase:  Sync
         Version:     v1
+        Group:       batch
+        Hook Phase:  Succeeded
+        Images:
+          local/m2cloud/m2cloud-sql-data:1.0.0
+        Kind:        CronJob
+        Message:     CronJob has not been scheduled yet
+        Name:        sql-data-backup
+        Namespace:   m2cloud
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
         Group:       networking.k8s.io
         Hook Phase:  Succeeded
         Kind:        Ingress
-        Message:     ingress.networking.k8s.io/webmvc configured. Warning: resource ingresses/webmvc is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
+        Message:     ingress.networking.k8s.io/webmvc unchanged
         Name:        webmvc
         Namespace:   m2cloud
         Status:      Synced
@@ -414,7 +478,7 @@ Status:
         Group:       monitoring.coreos.com
         Hook Phase:  Succeeded
         Kind:        ServiceMonitor
-        Message:     servicemonitor.monitoring.coreos.com/dotnetgigs-services configured. Warning: resource servicemonitors/dotnetgigs-services is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
+        Message:     servicemonitor.monitoring.coreos.com/dotnetgigs-services unchanged
         Name:        dotnetgigs-services
         Namespace:   observability
         Status:      Synced
@@ -423,7 +487,7 @@ Status:
         Group:       monitoring.coreos.com
         Hook Phase:  Succeeded
         Kind:        PrometheusRule
-        Message:     prometheusrule.monitoring.coreos.com/dotnetgigs-slo-rules configured. Warning: resource prometheusrules/dotnetgigs-slo-rules is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by  apply.  apply should only be used on resources created declaratively by either  create --save-config or  apply. The missing annotation will be patched automatically.
+        Message:     prometheusrule.monitoring.coreos.com/dotnetgigs-slo-rules unchanged
         Name:        dotnetgigs-slo-rules
         Namespace:   observability
         Status:      Synced
@@ -441,19 +505,21 @@ Status:
         Status:      Synced
         Sync Phase:  PostSync
         Version:     v1
-      Revision:      54e97ce13fa95f74b28d1eb334c00f9b741150c2
+      Revision:      db283eaee014e27a2cd2fbece1eb91e689883036
       Source:
         Helm:
           Parameters:
             Name:   global.imageRegistry
             Value:  local/m2cloud
+            Name:   global.imageTag
+            Value:  1.0.0
           Value Files:
             values.yaml
             ../../environments/dev/values-dev.yaml
         Path:              helm/dotnetgigs
         Repo URL:          https://github.com/DiabiWali/m2cloud-k8s-dotnetgigs.git
-        Target Revision:   main
-  Reconciled At:           2026-05-21T03:57:34Z
+        Target Revision:   feat/developer-portal-backstage
+  Reconciled At:           2026-05-21T04:09:34Z
   Resource Health Source:  appTree
   Resources:
     Kind:       ConfigMap
@@ -554,7 +620,7 @@ Status:
     Kind:       Deployment
     Name:       webmvc
     Namespace:  m2cloud
-    Status:     OutOfSync
+    Status:     Synced
     Version:    v1
     Group:      apps
     Kind:       StatefulSet
@@ -580,6 +646,12 @@ Status:
     Namespace:  m2cloud
     Status:     Synced
     Version:    v2
+    Group:      batch
+    Kind:       CronJob
+    Name:       sql-data-backup
+    Namespace:  m2cloud
+    Status:     Synced
+    Version:    v1
     Group:      monitoring.coreos.com
     Kind:       PrometheusRule
     Name:       dotnetgigs-slo-rules
@@ -602,7 +674,7 @@ Status:
     Kind:       NetworkPolicy
     Name:       allow-apis-to-sql-data
     Namespace:  m2cloud
-    Status:     OutOfSync
+    Status:     Synced
     Version:    v1
     Group:      networking.k8s.io
     Kind:       NetworkPolicy
@@ -688,40 +760,56 @@ Status:
       Destination:
         Namespace:  m2cloud
         Server:     https://kubernetes.default.svc
+      Ignore Differences:
+        Group:  apps
+        Jq Path Expressions:
+          .spec.replicas
+        Kind:  Deployment
       Source:
         Helm:
           Parameters:
             Name:   global.imageRegistry
             Value:  local/m2cloud
+            Name:   global.imageTag
+            Value:  1.0.0
           Value Files:
             values.yaml
             ../../environments/dev/values-dev.yaml
         Path:             helm/dotnetgigs
         Repo URL:         https://github.com/DiabiWali/m2cloud-k8s-dotnetgigs.git
-        Target Revision:  main
-    Revision:             624ac25441273a151c892b9b55ea478ef0284482
-    Status:               OutOfSync
+        Target Revision:  feat/developer-portal-backstage
+    Revision:             db283eaee014e27a2cd2fbece1eb91e689883036
+    Status:               Synced
 Events:
-  Type    Reason           Age    From                           Message
-  ----    ------           ----   ----                           -------
-  Normal  ResourceUpdated  58m    argocd-application-controller  Updated health status: Healthy -> Progressing
-  Normal  ResourceUpdated  58m    argocd-application-controller  Updated health status: Progressing -> Healthy
-  Normal  ResourceUpdated  50m    argocd-application-controller  Updated health status: Healthy -> Progressing
-  Normal  ResourceUpdated  50m    argocd-application-controller  Updated health status: Progressing -> Healthy
-  Normal  ResourceUpdated  46m    argocd-application-controller  Updated health status: Healthy -> Progressing
-  Normal  ResourceUpdated  46m    argocd-application-controller  Updated health status: Progressing -> Healthy
-  Normal  ResourceUpdated  35m    argocd-application-controller  Updated health status: Healthy -> Progressing
-  Normal  ResourceUpdated  35m    argocd-application-controller  Updated health status: Progressing -> Healthy
-  Normal  ResourceUpdated  34m    argocd-application-controller  Updated health status: Healthy -> Progressing
-  Normal  ResourceUpdated  34m    argocd-application-controller  Updated health status: Progressing -> Healthy
-  Normal  ResourceUpdated  33m    argocd-application-controller  Updated health status: Healthy -> Progressing
-  Normal  ResourceUpdated  33m    argocd-application-controller  Updated health status: Progressing -> Healthy
-  Normal  ResourceUpdated  23m    argocd-application-controller  Updated sync status: Synced -> OutOfSync
-  Normal  ResourceUpdated  23m    argocd-application-controller  Updated health status: Healthy -> Progressing
-  Normal  ResourceUpdated  23m    argocd-application-controller  Updated health status: Progressing -> Healthy
-  Normal  ResourceUpdated  13m    argocd-application-controller  Updated sync status: OutOfSync -> Synced
-  Normal  ResourceUpdated  6m41s  argocd-application-controller  Updated sync status: Synced -> OutOfSync
-  Normal  ResourceUpdated  6m41s  argocd-application-controller  Updated health status: Healthy -> Progressing
-  Normal  ResourceUpdated  6m3s   argocd-application-controller  Updated health status: Progressing -> Healthy
-  Normal  ResourceUpdated  100s   argocd-application-controller  Updated health status: Healthy -> Progressing
-  Normal  ResourceUpdated  78s    argocd-application-controller  Updated health status: Progressing -> Healthy
+  Type    Reason              Age    From                           Message
+  ----    ------              ----   ----                           -------
+  Normal  ResourceUpdated     59m    argocd-application-controller  Updated health status: Healthy -> Progressing
+  Normal  ResourceUpdated     58m    argocd-application-controller  Updated health status: Progressing -> Healthy
+  Normal  ResourceUpdated     47m    argocd-application-controller  Updated health status: Healthy -> Progressing
+  Normal  ResourceUpdated     47m    argocd-application-controller  Updated health status: Progressing -> Healthy
+  Normal  ResourceUpdated     46m    argocd-application-controller  Updated health status: Healthy -> Progressing
+  Normal  ResourceUpdated     46m    argocd-application-controller  Updated health status: Progressing -> Healthy
+  Normal  ResourceUpdated     45m    argocd-application-controller  Updated health status: Healthy -> Progressing
+  Normal  ResourceUpdated     45m    argocd-application-controller  Updated health status: Progressing -> Healthy
+  Normal  ResourceUpdated     35m    argocd-application-controller  Updated sync status: Synced -> OutOfSync
+  Normal  ResourceUpdated     35m    argocd-application-controller  Updated health status: Healthy -> Progressing
+  Normal  ResourceUpdated     35m    argocd-application-controller  Updated health status: Progressing -> Healthy
+  Normal  ResourceUpdated     25m    argocd-application-controller  Updated sync status: OutOfSync -> Synced
+  Normal  ResourceUpdated     18m    argocd-application-controller  Updated sync status: Synced -> OutOfSync
+  Normal  ResourceUpdated     18m    argocd-application-controller  Updated health status: Healthy -> Progressing
+  Normal  ResourceUpdated     18m    argocd-application-controller  Updated health status: Progressing -> Healthy
+  Normal  ResourceUpdated     13m    argocd-application-controller  Updated health status: Healthy -> Progressing
+  Normal  ResourceUpdated     13m    argocd-application-controller  Updated health status: Progressing -> Healthy
+  Normal  ResourceUpdated     11m    argocd-application-controller  Updated health status: Healthy -> Progressing
+  Normal  ResourceUpdated     11m    argocd-application-controller  Updated health status: Progressing -> Healthy
+  Normal  ResourceUpdated     4m31s  argocd-application-controller  Updated health status: Healthy -> Progressing
+  Normal  ResourceUpdated     4m31s  argocd-application-controller  Updated sync status: OutOfSync -> Synced
+  Normal  ResourceUpdated     4m31s  argocd-application-controller  Updated health status: Progressing -> Healthy
+  Normal  OperationCompleted  4m25s  argocd-application-controller  Sync operation to 1affb027e63997d9124397a7e20ecc5b9b04e7e2 succeeded
+  Normal  ResourceUpdated     4m21s  argocd-application-controller  Updated sync status: Synced -> OutOfSync
+  Normal  ResourceUpdated     4m21s  argocd-application-controller  Updated health status: Healthy -> Progressing
+  Normal  ResourceUpdated     3m59s  argocd-application-controller  Updated health status: Progressing -> Healthy
+  Normal  ResourceUpdated     2m39s  argocd-application-controller  Updated sync status: OutOfSync -> Synced
+  Normal  ResourceUpdated     2m21s  argocd-application-controller  Updated health status: Healthy -> Progressing
+  Normal  OperationCompleted  2m20s  argocd-application-controller  Sync operation to db283eaee014e27a2cd2fbece1eb91e689883036 succeeded
+  Normal  ResourceUpdated     118s   argocd-application-controller  Updated health status: Progressing -> Healthy

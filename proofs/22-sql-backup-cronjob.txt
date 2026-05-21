@@ -7,7 +7,8 @@ Labels:                        app.kubernetes.io/component=database-backup
                                helm.sh/chart=dotnetgigs-1.1.0
                                owner=ynov
                                project=m2cloud
-Annotations:                   meta.helm.sh/release-name: dotnetgigs
+Annotations:                   argocd.argoproj.io/tracking-id: dotnetgigs:batch/CronJob:m2cloud/sql-data-backup
+                               meta.helm.sh/release-name: dotnetgigs
                                meta.helm.sh/release-namespace: m2cloud
 Schedule:                      0 2 * * *
 Concurrency Policy:            Forbid
@@ -104,7 +105,7 @@ Pod Template:
 Last Schedule Time:  <unset>
 Active Jobs:         <none>
 Events:
-  Type     Reason         Age                    From                Message
-  ----     ------         ----                   ----                -------
-  Warning  UnexpectedJob  6m48s (x3 over 6m50s)  cronjob-controller  Saw a job that the controller did not create or forgot: sql-data-backup-manual-20260521055253
-  Warning  UnexpectedJob  91s (x5 over 96s)      cronjob-controller  Saw a job that the controller did not create or forgot: sql-data-backup-manual-20260521055807
+  Type     Reason         Age                From                Message
+  ----     ------         ----               ----                -------
+  Warning  UnexpectedJob  19m (x3 over 19m)  cronjob-controller  Saw a job that the controller did not create or forgot: sql-data-backup-manual-20260521055253
+  Warning  UnexpectedJob  13m (x5 over 13m)  cronjob-controller  Saw a job that the controller did not create or forgot: sql-data-backup-manual-20260521055807
