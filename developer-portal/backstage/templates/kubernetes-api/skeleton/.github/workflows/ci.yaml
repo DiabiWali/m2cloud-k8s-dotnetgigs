@@ -1,0 +1,28 @@
+name: CI - ${{ values.component_id }}
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build-test-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build container image
+        working-directory: apps/${{ values.component_id }}
+        run: docker build -t ${{ values.component_id }}:ci .
+
+      - name: Scan image with Trivy
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: ${{ values.component_id }}:ci
+          format: table
+          exit-code: "0"
+
+      - name: Helm lint
+        run: helm lint apps/${{ values.component_id }}/helm

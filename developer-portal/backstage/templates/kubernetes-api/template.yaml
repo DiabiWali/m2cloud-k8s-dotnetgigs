@@ -1,0 +1,137 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: kubernetes-ready-api
+  title: Nouvelle API Kubernetes-ready
+  description: Génère une API standardisée avec Dockerfile, Helm, GitOps Argo CD, probes, HPA, PDB, ServiceMonitor, CI GitHub Actions et Pull Request.
+  tags:
+    - kubernetes
+    - helm
+    - gitops
+    - cicd
+    - platform-engineering
+spec:
+  owner: group:default/platform-team
+  type: service
+
+  parameters:
+    - title: Informations applicatives
+      required:
+        - component_id
+        - description
+        - owner
+      properties:
+        component_id:
+          title: Nom technique de l'application
+          type: string
+          description: Nom Kubernetes-compatible, par exemple hello-api.
+          pattern: '^[a-z0-9]([-a-z0-9]*[a-z0-9])?$'
+          ui:autofocus: true
+        description:
+          title: Description
+          type: string
+          description: Description courte de l'application.
+        owner:
+          title: Owner
+          type: string
+          default: group:default/platform-team
+
+    - title: Paramètres Kubernetes
+      required:
+        - namespace
+        - port
+        - replicas
+      properties:
+        namespace:
+          title: Namespace Kubernetes
+          type: string
+          default: m2cloud
+        port:
+          title: Port applicatif
+          type: integer
+          default: 8080
+        replicas:
+          title: Nombre de replicas
+          type: integer
+          default: 2
+        host:
+          title: Hostname Ingress
+          type: string
+          default: hello-api.dotnetgigs.local
+
+  steps:
+    - id: fetch-base
+      name: Génération du squelette applicatif
+      action: fetch:template
+      input:
+        url: ./skeleton
+        values:
+          component_id: ${{ parameters.component_id }}
+          description: ${{ parameters.description }}
+          owner: ${{ parameters.owner }}
+          namespace: ${{ parameters.namespace }}
+          port: ${{ parameters.port }}
+          replicas: ${{ parameters.replicas }}
+          host: ${{ parameters.host }}
+
+    - id: move-component
+      name: Placement dans apps/
+      action: fs:rename
+      input:
+        files:
+          - from: _component
+            to: apps/${{ parameters.component_id }}
+
+    - id: move-gitops
+      name: Placement du manifeste Argo CD
+      action: fs:rename
+      input:
+        files:
+          - from: gitops/apps/application.yaml
+            to: gitops/apps/${{ parameters.component_id }}-application.yaml
+
+    - id: move-workflow
+      name: Placement du workflow CI
+      action: fs:rename
+      input:
+        files:
+          - from: .github/workflows/ci.yaml
+            to: .github/workflows/${{ parameters.component_id }}-ci.yaml
+
+    - id: publish-pr
+      name: Création de la Pull Request GitHub
+      action: publish:github:pull-request
+      input:
+        repoUrl: github.com?owner=DiabiWali&repo=m2cloud-k8s-dotnetgigs
+        branchName: backstage-onboard-${{ parameters.component_id }}
+        targetBranchName: feat/developer-portal-backstage
+        title: "feat(platform): onboard ${{ parameters.component_id }} from Backstage"
+        description: |
+          Cette Pull Request a été générée depuis le portail développeur Backstage.
+
+          Elle ajoute une nouvelle application Kubernetes-ready avec :
+          - API Node.js ;
+          - Dockerfile ;
+          - Helm chart ;
+          - Ingress ;
+          - HPA ;
+          - PDB ;
+          - ServiceMonitor ;
+          - manifeste Argo CD ;
+          - workflow CI GitHub Actions.
+
+    - id: log
+      name: Résumé
+      action: debug:log
+      input:
+        message: Application générée et Pull Request GitHub créée avec le golden path M2Cloud.
+
+  output:
+    links:
+      - title: Pull Request GitHub
+        url: ${{ steps['publish-pr'].output.remoteUrl }}
+    text:
+      - title: Application générée
+        content: |
+          L'application `${{ parameters.component_id }}` a été générée.
+          Une Pull Request GitHub a été créée pour intégrer l'application au repository.

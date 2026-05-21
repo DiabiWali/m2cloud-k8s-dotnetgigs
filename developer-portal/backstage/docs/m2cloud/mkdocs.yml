@@ -1,0 +1,5 @@
+site_name: M2Cloud Kubernetes Platform
+nav:
+  - Accueil: index.md
+plugins:
+  - techdocs-core

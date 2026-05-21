@@ -1,0 +1,18 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{ values.component_id }}
+  title: ${{ values.component_id }}
+  description: ${{ values.description }}
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - api
+    - kubernetes
+    - helm
+    - gitops
+spec:
+  type: service
+  lifecycle: production
+  owner: ${{ values.owner }}
+  system: m2cloud-platform

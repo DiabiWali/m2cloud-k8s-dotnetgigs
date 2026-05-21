@@ -1,0 +1,126 @@
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: cloud
+  title: Cloud & Platform Engineering
+  description: Domaine lié au cloud, Kubernetes, GitOps, observabilité et plateforme développeur.
+spec:
+  owner: platform-team
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: platform-team
+  title: Platform Team
+  description: Équipe responsable du socle Kubernetes, GitOps, observabilité, sécurité et portail développeur.
+spec:
+  type: team
+  profile:
+    displayName: Platform Team
+  children: []
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: m2cloud-platform
+  title: M2Cloud Kubernetes Platform
+  description: Plateforme cloud-native Kubernetes pour DotNetGigs, GitOps, observabilité, orchestration des données et onboarding applicatif.
+  tags:
+    - kubernetes
+    - gitops
+    - platform-engineering
+    - observability
+    - data-orchestration
+spec:
+  owner: platform-team
+  domain: cloud
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: dotnetgigs
+  title: DotNetGigs
+  description: Application principale microservices déployée sur Kubernetes avec Helm, Argo CD, observabilité et sécurité réseau.
+  annotations:
+    backstage.io/techdocs-ref: dir:../../docs/m2cloud
+  links:
+    - url: https://dotnetgigs.local
+      title: Application DotNetGigs
+      icon: web
+    - url: https://localhost:8080
+      title: Argo CD
+      icon: dashboard
+    - url: http://localhost:3000
+      title: Grafana
+      icon: dashboard
+    - url: http://localhost:5601
+      title: Kibana
+      icon: dashboard
+    - url: https://github.com/DiabiWali/m2cloud-k8s-dotnetgigs
+      title: Repository GitHub
+      icon: github
+  tags:
+    - dotnet
+    - kubernetes
+    - helm
+    - argocd
+    - microservices
+spec:
+  type: service
+  lifecycle: production
+  owner: platform-team
+  system: m2cloud-platform
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: sql-data
+  title: SQL Data
+  description: Composant stateful SQL Server avec StatefulSet, PVC, sauvegarde et runbook de restauration.
+  tags:
+    - sqlserver
+    - statefulset
+    - pvc
+    - backup
+spec:
+  type: database
+  lifecycle: production
+  owner: platform-team
+  system: m2cloud-platform
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: rabbitmq
+  title: RabbitMQ Broker
+  description: Broker de messages interne utilisé par l'architecture applicative.
+  tags:
+    - rabbitmq
+    - messaging
+    - broker
+spec:
+  type: service
+  lifecycle: production
+  owner: platform-team
+  system: m2cloud-platform
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: redis-cache
+  title: Redis Cache
+  description: Cache applicatif interne, non critique pour la persistance métier.
+  tags:
+    - redis
+    - cache
+spec:
+  type: service
+  lifecycle: production
+  owner: platform-team
+  system: m2cloud-platform

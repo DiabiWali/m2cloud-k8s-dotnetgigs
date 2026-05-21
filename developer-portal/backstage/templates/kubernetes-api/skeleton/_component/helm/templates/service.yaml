@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ${{ values.component_id }}
+  labels:
+    app.kubernetes.io/name: ${{ values.component_id }}
+    app.kubernetes.io/part-of: m2cloud-platform
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    app.kubernetes.io/name: ${{ values.component_id }}
+  ports:
+    - name: http
+      port: {{ .Values.service.port }}
+      targetPort: http
