@@ -4,11 +4,13 @@ on:
   push:
     branches:
       - main
+      - feat/developer-portal-backstage
   pull_request:
 
 jobs:
   build-test-scan:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -17,12 +19,25 @@ jobs:
         working-directory: apps/${{ values.component_id }}
         run: docker build -t ${{ values.component_id }}:ci .
 
+      - name: Smoke test container
+        run: |
+          docker run --rm -d --name ${{ values.component_id }}-ci -p 8088:${{ values.port }} ${{ values.component_id }}:ci
+          sleep 3
+          curl -f http://localhost:8088/health
+          curl -f http://localhost:8088/version
+          curl -f http://localhost:8088/api/hello
+          curl -f http://localhost:8088/metrics
+          docker rm -f ${{ values.component_id }}-ci
+
       - name: Scan image with Trivy
-        uses: aquasecurity/trivy-action@0.28.0
-        with:
-          image-ref: ${{ values.component_id }}:ci
-          format: table
-          exit-code: "0"
+        run: |
+          docker run --rm \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            aquasec/trivy:latest \
+            image --severity HIGH,CRITICAL --exit-code 0 ${{ values.component_id }}:ci
 
       - name: Helm lint
         run: helm lint apps/${{ values.component_id }}/helm
+
+      - name: Helm template
+        run: helm template ${{ values.component_id }} apps/${{ values.component_id }}/helm -n ${{ values.namespace }} > /tmp/${{ values.component_id }}-rendered.yaml

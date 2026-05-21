@@ -105,6 +105,12 @@ catalog:
   rules:
     - allow: [Component, System, API, Resource, Location]
   locations:
+    # M2Cloud generated application - hello-api
+    - type: file
+      target: ../../../../apps/hello-api/catalog-info.yaml
+      rules:
+        - allow: [Component]
+
     # M2Cloud application template
     - type: file
       target: ../../templates/kubernetes-api/template.yaml
