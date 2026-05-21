@@ -316,3 +316,8 @@ Documentation associée :
 - `docs/DATA-ORCHESTRATION.md`
 - `docs/DATA-RESTORE-RUNBOOK.md`
 - `docs/DATA-PRODUCTION-READINESS.md`
+
+
+## Évaluation et preuves
+
+- `docs/EVALUATION-MATRIX.md` — matrice d'évaluation reliant critères, implémentation et preuves.
